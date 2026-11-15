@@ -150,7 +150,7 @@ dd { margin: 0; color: var(--body); }
 .beats li { counter-increment: b; display: grid; grid-template-columns: 36px 1fr; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .beats li::before { content: counter(b, decimal-leading-zero); color: var(--glow); font-size: 11px; padding-top: 2px; }
 .beats b { color: var(--text); font-weight: 500; }
-.sindex { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.sindex { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .sidx { text-decoration: none; padding: 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 12px; color: var(--body); display: flex; flex-direction: column; gap: 6px; transition: background .2s; }
 .sidx span { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: 28px; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--muted); transition: -webkit-text-stroke-color .2s, color .2s; }
 .sidx:hover { background: var(--ink); color: var(--text); }
@@ -219,7 +219,7 @@ dd { margin: 0; color: var(--body); }
 .musiccard { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; margin: 22px 0 30px; font-size: 12px; }
 .musiccard span b { color: var(--text); font-weight: 500; }
 .mustget { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); margin-top: 18px; }
-.mustget li { list-style: none; padding: 12px 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 12px; display: grid; grid-template-columns: 34px 1fr; gap: 8px; }
+.mustget li { list-style: none; padding: 12px 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 12px; display: grid; grid-template-columns: 44px 1fr; gap: 8px; }
 .mustget li span { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--glow); font-size: 18px; line-height: 1.1; }
 .mustget li.core span { color: var(--text); }
 @media (max-width: 760px) { .ksvis, .mustget { grid-template-columns: 1fr; } .beat li { grid-template-columns: 70px 1fr; } .beat .mv { grid-column: 2; } .banner { grid-template-columns: 1fr; } }
@@ -442,13 +442,14 @@ dd { margin: 0; color: var(--body); }
     <div class="sec-head rv"><div><p class="kick">06 · story overview</p><h2 class="h-sec">the story.</h2></div><div class="count" aria-hidden="true">~48s</div></div>
     <div class="story">
       <div class="rv">
-        <p class="body" style="margin-bottom:16px">we start in the bathroom with her and the bottle, and santa walking past the door. then we just move through the house. every room has somebody in it doing their christmas morning, and santa is somewhere he shouldn't be.</p>
+        <p class="body" style="margin-bottom:16px">we start in the bathroom with her and the bottle, and santa walking past the door. a quick look at him waking up and the girls still asleep tells you who stayed the night. then we just move through the house. every room has somebody in it doing their christmas morning, and santa is somewhere he shouldn't be.</p>
         <p class="body" style="margin-bottom:16px">two gifting beats carry it: gift your man (the den) and gift your girls (bedroom 2). two grip beats prove the oil: the arm wrestle and twister. the calvin klein insert sells the waistband.</p>
         <p class="body">it all ends in the living room. slow pull back, everyone in their spot, santa center. logo.</p>
       </div>
       <ol class="beats rv">
         <li><span><b>open</b> · the bathroom, the pour, santa passes</span></li>
         <li><span><b>wake</b> · him, the waistband, a box on the nightstand</span></li>
+        <li><span><b>the sleepover</b> · the girls asleep, middle of the bed empty</span></li>
         <li><span><b>arrive</b> · santa at the door with the stack</span></li>
         <li><span><b>gift your man</b> · the den, dry to glazed</span></li>
         <li><span><b>gift your girls</b> · the mauve room, boxes on santa</span></li>
@@ -458,7 +459,7 @@ dd { margin: 0; color: var(--body); }
         <li><span><b>pull back</b> · everyone, santa center, logo</span></li>
       </ol>
     </div>
-    <nav class="sindex rv" aria-label="scene index"><a href="#scene-01" class="sidx"><span>01</span>the bathroom</a><a href="#scene-02" class="sidx"><span>02</span>the wake up</a><a href="#scene-03" class="sidx"><span>03</span>the delivery</a><a href="#scene-04" class="sidx"><span>04</span>milk run</a><a href="#scene-05" class="sidx"><span>05</span>the walk</a><a href="#scene-06" class="sidx"><span>06</span>gift your man</a><a href="#scene-07" class="sidx"><span>07</span>by the fire</a><a href="#scene-08" class="sidx"><span>08</span>gift your girls</a><a href="#scene-09" class="sidx"><span>09</span>feet up</a><a href="#scene-10" class="sidx"><span>10</span>grip holds</a><a href="#scene-11" class="sidx"><span>11</span>reading</a><a href="#scene-12" class="sidx"><span>12</span>twister</a><a href="#scene-13" class="sidx"><span>13</span>the insert</a><a href="#scene-14" class="sidx"><span>14</span>the pull back</a></nav>
+    <nav class="sindex rv" aria-label="scene index"><a href="#scene-01" class="sidx"><span>01</span>the bathroom</a><a href="#scene-02" class="sidx"><span>02</span>the wake up</a><a href="#scene-02b" class="sidx"><span>02b</span>the sleepover</a><a href="#scene-03" class="sidx"><span>03</span>the delivery</a><a href="#scene-04" class="sidx"><span>04</span>milk run</a><a href="#scene-05" class="sidx"><span>05</span>the walk</a><a href="#scene-06" class="sidx"><span>06</span>gift your man</a><a href="#scene-07" class="sidx"><span>07</span>by the fire</a><a href="#scene-08" class="sidx"><span>08</span>gift your girls</a><a href="#scene-09" class="sidx"><span>09</span>feet up</a><a href="#scene-10" class="sidx"><span>10</span>grip holds</a><a href="#scene-11" class="sidx"><span>11</span>reading</a><a href="#scene-12" class="sidx"><span>12</span>twister</a><a href="#scene-13" class="sidx"><span>13</span>the insert</a><a href="#scene-14" class="sidx"><span>14</span>the pull back</a></nav>
   </div>
 </section>
 
@@ -473,7 +474,7 @@ dd { margin: 0; color: var(--body); }
       <a class="btn" href="https://www.youtube.com/watch?v=ryk9XvU_Jqc">audio reference →</a>
     </div>
     <p class="kick">beat map · ~35s hero</p>
-    <ol class="beat"><li><span class="tc">0:00</span><span class="sc">01 the bathroom</span><span class="mv">song opens. her at the mirror, santa crosses the doorway behind her</span></li><li><span class="tc">0:02.5</span><span class="sc">02 the wake up</span><span class="mv">cut on the next beat</span></li><li><span class="tc">0:04</span><span class="sc">03 the delivery</span><span class="mv">santa&#x27;s stare lands on the first downbeat once the vocal comes in</span></li><li><span class="tc">0:06</span><span class="sc">04 + 05 milk run, the walk</span><span class="mv">quick, a beat and a half each</span></li><li><span class="tc">0:09</span><span class="sc">06 gift your man</span><span class="mv">dry forearm on the beat, the glow follows her hand</span></li><li><span class="tc">0:12</span><span class="sc">07 + 08 fire, gift your girls</span><span class="mv">box drop on the downbeat</span></li><li><span class="tc">0:15.75</span><span class="sc">09 + 10 feet up, grip holds</span><span class="mv">the pin hits on the hook</span></li><li><span class="tc">0:20.25</span><span class="sc">11 + 12 reading, twister</span><span class="mv">one flash frame of the legs in the tree right on a beat</span></li><li><span class="tc">0:24.5</span><span class="sc">13 the insert</span><span class="mv">slowest shots in the film, let them breathe</span></li><li><span class="tc">0:28.5</span><span class="sc">14 the pull back</span><span class="mv">rides the last bar</span></li><li><span class="tc">0:32.5</span><span class="sc">GLAZE logo</span><span class="mv">logo on the final downbeat, reverb tail rings out over it</span></li></ol>
+    <ol class="beat"><li><span class="tc">0:00</span><span class="sc">01 · 02 · 02b · 03 the roll call</span><span class="mv">four fast cuts, about a beat each: her at the mirror, him waking up, the girls asleep, santa at the door. everybody&#x27;s in the house before the story starts</span></li><li><span class="tc">0:04.75</span><span class="sc">04 + 05 milk run, the walk</span><span class="mv">now we settle into the rooms. two beats each</span></li><li><span class="tc">0:08.75</span><span class="sc">06 gift your man</span><span class="mv">dry forearm on the beat, the glow follows her hand</span></li><li><span class="tc">0:11.5</span><span class="sc">07 + 08 fire, gift your girls</span><span class="mv">same frame as the sleepover, now santa&#x27;s in the middle. box drop on the downbeat</span></li><li><span class="tc">0:16</span><span class="sc">09 + 10 feet up, grip holds</span><span class="mv">the pin hits on the hook</span></li><li><span class="tc">0:20.75</span><span class="sc">11 + 12 reading, twister</span><span class="mv">one flash frame of the legs in the tree right on a beat</span></li><li><span class="tc">0:25.25</span><span class="sc">13 the insert</span><span class="mv">slowest shots in the film, let them breathe</span></li><li><span class="tc">0:29.25</span><span class="sc">14 the pull back</span><span class="mv">rides the last bar</span></li><li><span class="tc">0:32.75</span><span class="sc">GLAZE logo</span><span class="mv">logo on the final downbeat, reverb tail rings out over it</span></li></ol>
     <p class="refnote">timecodes are approximate. we snap every cut to the downbeats once we have the final slowed version. no lyrics on screen.</p>
   </div>
 </section>
@@ -487,7 +488,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 01 / 14 · bathroom</p>
+        <p class="kick">scene 01 · bathroom</p>
         <h3 class="h-scene">the bathroom</h3>
       </div>
       <div class="num" aria-hidden="true">01</div>
@@ -512,7 +513,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 02 / 14 · bedroom 1 · mustard</p>
+        <p class="kick">scene 02 · bedroom 1 · mustard</p>
         <h3 class="h-scene">the wake up</h3>
       </div>
       <div class="num" aria-hidden="true">02</div>
@@ -533,11 +534,36 @@ dd { margin: 0; color: var(--body); }
     <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m38.jpg" alt="photo mockup 38" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin38.jpg" alt="pinterest reference 38" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
   </div>
 </section>
+<section class="scene" id="scene-02b">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 02b · bedroom 2 · mauve</p>
+        <h3 class="h-scene">the sleepover</h3>
+      </div>
+      <div class="num" aria-hidden="true">02b</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">4:00 – 4:15p</span></div>
+      <div><span class="k">in the edit</span><span class="v">1s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the two of them asleep, the middle of the bed empty</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_02b.jpg" alt="storyboard 02b" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>02b</span></figcaption></figure><figure class="frame"><video src="vid/sb02b.mp4" poster="img/GLAZE_SB_02b.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>02b · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">a quick look in the mauve room before anyone&#x27;s up. brittni and the cozy friend asleep side by side, phones face down, a GLAZE gift on the nightstand. the middle of the bed is empty.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">tells you they slept over, so they don&#x27;t just show up later. it also sets up scene 08: when we come back, santa is lying in that empty spot with a box on his chest.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>locked off wide from the foot of the bed, same frame as 08</li><li>phones face down, gift on the nightstand</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><p class="refnote">no separate stills planned here. we grab a frame from the film.</p></div>
+  </div>
+</section>
 <section class="scene" id="scene-03">
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 03 / 14 · entry</p>
+        <p class="kick">scene 03 · entry</p>
         <h3 class="h-scene">the delivery</h3>
       </div>
       <div class="num" aria-hidden="true">03</div>
@@ -562,7 +588,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 04 / 14 · kitchen</p>
+        <p class="kick">scene 04 · kitchen</p>
         <h3 class="h-scene">milk run</h3>
       </div>
       <div class="num" aria-hidden="true">04</div>
@@ -587,7 +613,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 05 / 14 · hallway mirrors</p>
+        <p class="kick">scene 05 · hallway mirrors</p>
         <h3 class="h-scene">the walk</h3>
       </div>
       <div class="num" aria-hidden="true">05</div>
@@ -612,7 +638,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 06 / 14 · den</p>
+        <p class="kick">scene 06 · den</p>
         <h3 class="h-scene">gift your man</h3>
       </div>
       <div class="num" aria-hidden="true">06</div>
@@ -637,7 +663,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 07 / 14 · fireside</p>
+        <p class="kick">scene 07 · fireside</p>
         <h3 class="h-scene">by the fire</h3>
       </div>
       <div class="num" aria-hidden="true">07</div>
@@ -662,7 +688,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 08 / 14 · bedroom 2 · mauve</p>
+        <p class="kick">scene 08 · bedroom 2 · mauve</p>
         <h3 class="h-scene">gift your girls</h3>
       </div>
       <div class="num" aria-hidden="true">08</div>
@@ -676,7 +702,7 @@ dd { margin: 0; color: var(--body); }
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_08.jpg" alt="storyboard 08" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>08</span></figcaption></figure><figure class="frame"><video src="vid/sb08.mp4" poster="img/GLAZE_SB_08.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>08 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
-      <div><p class="kick">what happens</p><p class="body">brittni and the cozy friend in the mauve room scrolling their phones. santa lies between them, a GLAZE box on his chest. brittni drops another gift on him without looking up.</p></div>
+      <div><p class="kick">what happens</p><p class="body">back in the mauve room, same frame as the sleepover. brittni and the cozy friend are up now, scrolling their phones. santa lies in the empty spot between them, a GLAZE box on his chest. brittni drops another gift on him without looking up.</p></div>
       <div><p class="kick">how it sells glaze</p><p class="body">the &#x27;gift your girls&#x27; beat, with the founder on screen. the boxes get stacked on santa like he&#x27;s furniture.</p></div>
       <div><p class="kick">video shots</p><ul class="shots"><li>symmetrical wide from the foot of the bed</li><li>box drop, slow-mo</li><li>phones close up</li></ul></div>
     </div>
@@ -687,7 +713,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 09 / 14 · dining</p>
+        <p class="kick">scene 09 · dining</p>
         <h3 class="h-scene">feet up</h3>
       </div>
       <div class="num" aria-hidden="true">09</div>
@@ -712,7 +738,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 10 / 14 · bar</p>
+        <p class="kick">scene 10 · bar</p>
         <h3 class="h-scene">grip holds</h3>
       </div>
       <div class="num" aria-hidden="true">10</div>
@@ -737,7 +763,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 11 / 14 · lounge</p>
+        <p class="kick">scene 11 · lounge</p>
         <h3 class="h-scene">reading</h3>
       </div>
       <div class="num" aria-hidden="true">11</div>
@@ -762,7 +788,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 12 / 14 · living room</p>
+        <p class="kick">scene 12 · living room</p>
         <h3 class="h-scene">twister</h3>
       </div>
       <div class="num" aria-hidden="true">12</div>
@@ -787,7 +813,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 13 / 14 · living room + redwood wall</p>
+        <p class="kick">scene 13 · living room + redwood wall</p>
         <h3 class="h-scene">the insert</h3>
       </div>
       <div class="num" aria-hidden="true">13</div>
@@ -812,7 +838,7 @@ dd { margin: 0; color: var(--body); }
   <div class="wrap">
     <header class="shead rv">
       <div class="shead-l">
-        <p class="kick">scene 14 / 14 · living room</p>
+        <p class="kick">scene 14 · living room</p>
         <h3 class="h-scene">the pull back</h3>
       </div>
       <div class="num" aria-hidden="true">14</div>
@@ -872,9 +898,9 @@ dd { margin: 0; color: var(--body); }
 <section class="sec" id="schedule">
   <div class="wrap">
     <div class="sec-head rv"><div><p class="kick">11 · run of show · 11.24.26</p><h2 class="h-sec">the day.</h2></div><div class="count" aria-hidden="true">1–6</div></div>
-    <ol class="run"><li class="rv"><span class="t">1:00p</span><span class="w">load in + setup</span><span class="d">crew call. talent in hair + makeup</span></li><li class="rv"><span class="t">1:20p</span><span class="w">the bathroom</span><span class="d">scene 01 · film + stills · product macros</span></li><li class="rv"><span class="t">1:50p</span><span class="w">bedroom 1</span><span class="d">scene 02</span></li><li class="rv"><span class="t">2:05p</span><span class="w">den</span><span class="d">scene 06 · before and after</span></li><li class="rv"><span class="t">2:40p</span><span class="w">entry + hallway</span><span class="d">scenes 03 + 05</span></li><li class="rv"><span class="t">3:00p</span><span class="w">living room</span><span class="d">scenes 12 + 14 · twister + the pull back</span></li><li class="rv"><span class="t">3:40p</span><span class="w">dining + kitchen</span><span class="d">scenes 09 + 04</span></li><li class="rv"><span class="t">4:00p</span><span class="w">bedroom 2</span><span class="d">scene 08</span></li><li class="rv"><span class="t">4:15p</span><span class="w">bar · lounge · fireside</span><span class="d">scenes 10, 11 + 07</span></li><li class="rv"><span class="t">4:50p</span><span class="w">the insert</span><span class="d">scene 13 · tree sitting, tree lying, redwood wall</span></li><li class="rv"><span class="t">5:20p</span><span class="w">product pickups</span><span class="d">heroes while the light is warm · sunset around 5:30</span></li><li class="rv"><span class="t">5:40p</span><span class="w">breakdown</span><span class="d">reset the house, out by 6:00p</span></li></ol>
+    <ol class="run"><li class="rv"><span class="t">1:00p</span><span class="w">load in + setup</span><span class="d">crew call. talent in hair + makeup</span></li><li class="rv"><span class="t">1:20p</span><span class="w">the bathroom</span><span class="d">scene 01 · film + stills · product macros</span></li><li class="rv"><span class="t">1:50p</span><span class="w">bedroom 1</span><span class="d">scene 02</span></li><li class="rv"><span class="t">2:05p</span><span class="w">den</span><span class="d">scene 06 · before and after</span></li><li class="rv"><span class="t">2:40p</span><span class="w">entry + hallway</span><span class="d">scenes 03 + 05</span></li><li class="rv"><span class="t">3:00p</span><span class="w">living room</span><span class="d">scenes 12 + 14 · twister + the pull back</span></li><li class="rv"><span class="t">3:40p</span><span class="w">dining + kitchen</span><span class="d">scenes 09 + 04</span></li><li class="rv"><span class="t">4:00p</span><span class="w">bedroom 2</span><span class="d">scenes 02b + 08 · the sleepover plant first, same frame, then santa</span></li><li class="rv"><span class="t">4:15p</span><span class="w">bar · lounge · fireside</span><span class="d">scenes 10, 11 + 07</span></li><li class="rv"><span class="t">4:50p</span><span class="w">the insert</span><span class="d">scene 13 · tree sitting, tree lying, redwood wall</span></li><li class="rv"><span class="t">5:20p</span><span class="w">product pickups</span><span class="d">heroes while the light is warm · sunset around 5:30</span></li><li class="rv"><span class="t">5:40p</span><span class="w">breakdown</span><span class="d">reset the house, out by 6:00p</span></li></ol>
     <div class="banner rv"><b>must-gets.</b><p>if we fall behind, we cut extras, not these. white numbers are the core scenes.</p></div>
-    <ul class="mustget rv"><li class="core"><span>01</span>slow-mo hand over the shoulder at the round mirror, bottle in frame</li><li class=""><span>02</span>the stretch, GLAZE waistband sharp</li><li class="core"><span>03</span>santa in the doorway with the box stack, dead into the lens</li><li class=""><span>04</span>santa pouring milk, open box of glazed donuts on the counter</li><li class=""><span>05</span>the walk past the tall mirror, her reflection with her</li><li class="core"><span>06</span>macro on his dry forearm, then the glow following her hand</li><li class=""><span>07</span>her hands on his shoulders, firelight on the oil</li><li class=""><span>08</span>the box dropping onto santa between the girls</li><li class=""><span>09</span>legs up on the table, bottle dead center</li><li class="core"><span>10</span>the pin. hands locked, macro, slow-mo</li><li class=""><span>11</span>the locked off wide on the sectional</li><li class="core"><span>12</span>legs out of the tree, overhead flash. plus one low wide of the game</li><li class="core"><span>13</span>13a at the tree. the other setups are bonus</li><li class="core"><span>14</span>the pull back, santa center, then the logo</li><li class="core"><span>P</span>the pour on the shoulder + the bottle next to a glazed donut</li></ul>
+    <ul class="mustget rv"><li class="core"><span>01</span>slow-mo hand over the shoulder at the round mirror, bottle in frame</li><li class=""><span>02</span>the stretch, GLAZE waistband sharp</li><li class="core"><span>02b</span>the two of them asleep, the middle of the bed empty</li><li class="core"><span>03</span>santa in the doorway with the box stack, dead into the lens</li><li class=""><span>04</span>santa pouring milk, open box of glazed donuts on the counter</li><li class=""><span>05</span>the walk past the tall mirror, her reflection with her</li><li class="core"><span>06</span>macro on his dry forearm, then the glow following her hand</li><li class=""><span>07</span>her hands on his shoulders, firelight on the oil</li><li class=""><span>08</span>the box dropping onto santa between the girls</li><li class=""><span>09</span>legs up on the table, bottle dead center</li><li class="core"><span>10</span>the pin. hands locked, macro, slow-mo</li><li class=""><span>11</span>the locked off wide on the sectional</li><li class="core"><span>12</span>legs out of the tree, overhead flash. plus one low wide of the game</li><li class="core"><span>13</span>13a at the tree. the other setups are bonus</li><li class="core"><span>14</span>the pull back, santa center, then the logo</li><li class="core"><span>P</span>the pour on the shoulder + the bottle next to a glazed donut</li></ul>
   </div>
 </section>
 
