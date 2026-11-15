@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLAZE Christmas Morning</title>
+<meta name="description" content="creative deck for the glaze body oil holiday campaign. film + stills, 11.24.26, stone mountain ga.">
+<link rel="icon" href="assets/k-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* chad lawson rust + black, delusion-scale type. layout: one long scroll, scene blocks of board | motion | copy | stills */
+  --black: #0b0b0b;
+  --ink: #141312;
+  --line: #2a2725;
+  --text: #f2efea;
+  --body: #d9d5ce;
+  --muted: #9a9690;
+  --rust: #b3381f;
+  --rust-d: #8f2a16;
+  --glow: #e06a52;
+  --display: "Archivo", "Arial Black", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --gut: clamp(16px, 3.2vw, 44px);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background: var(--black); color: var(--body); font-family: var(--mono); font-size: 14px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 var(--gut); }
+
+/* grain over everything */
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 90; background: url(assets/grain.svg); opacity: .09; mix-blend-mode: overlay; }
+
+/* progress */
+.progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: var(--glow); transform-origin: 0 50%; transform: scaleX(0); z-index: 100; }
+
+/* nav */
+.nav { position: sticky; top: 0; z-index: 80; background: rgba(11,11,11,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 24px; height: 60px; }
+.nav .logo { width: 30px; height: 30px; flex: none; }
+.nav .word { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--text); font-size: 18px; letter-spacing: -.02em; text-decoration: none; white-space: nowrap; }
+.nav .links { display: flex; min-width: 0; gap: 18px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+.nav .links::-webkit-scrollbar { display: none; }
+.nav .links a { text-decoration: none; color: var(--body); font-size: 12px; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+.nav .links a:hover { color: var(--text); }
+.badge { background: var(--rust); color: var(--text); font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 9px; }
+
+/* ticker */
+.ticker { background: var(--rust); color: var(--black); overflow: hidden; border-block: 1px solid var(--black); }
+.ticker .run { display: flex; width: max-content; animation: tick 60s linear infinite; }
+.ticker span { font-size: 12px; font-weight: 700; text-transform: lowercase; padding: 9px 0; white-space: nowrap; }
+.ticker i { font-style: normal; padding: 9px 22px; font-size: 8px; line-height: 2.6; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* type */
+.kick { font-size: 11px; color: var(--glow); text-transform: lowercase; letter-spacing: .02em; margin: 0 0 10px; }
+.h-mega, .h-sec, .h-scene, .tname { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--text); text-transform: lowercase; text-wrap: balance; margin: 0; }
+.h-mega { font-size: clamp(56px, 12.5vw, 196px); line-height: .86; letter-spacing: -.035em; }
+.h-sec { font-size: clamp(44px, 8vw, 128px); line-height: .9; letter-spacing: -.03em; }
+.h-scene { font-size: clamp(40px, 6.6vw, 104px); line-height: .9; letter-spacing: -.03em; }
+.tname { font-size: clamp(24px, 2.6vw, 36px); line-height: .95; letter-spacing: -.02em; }
+.lede { max-width: 62ch; font-size: 15px; color: var(--muted); margin: 26px 0 0; }
+.lede b { color: var(--text); font-weight: 700; }
+.body { margin: 0; max-width: 62ch; }
+.pill { position: absolute; left: 10px; top: 10px; background: var(--black); color: var(--text); font-size: 10px; padding: 3px 9px; border-radius: 99px; text-transform: lowercase; letter-spacing: .03em; }
+.pill.dim { color: var(--muted); }
+.chip { border: 1px solid var(--line); border-radius: 99px; padding: 2px 10px; font-size: 11px; color: var(--body); white-space: nowrap; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; background:
+   radial-gradient(120% 90% at 18% 10%, var(--glow) 0%, transparent 46%),
+   radial-gradient(140% 120% at 100% 100%, #120605 0%, transparent 55%),
+   linear-gradient(160deg, var(--rust) 0%, var(--rust-d) 60%, #2a0d07 100%); }
+.hero::before { content: ""; position: absolute; inset: 0; background: url(assets/grain.svg); opacity: .35; mix-blend-mode: multiply; pointer-events: none; }
+.hero .wrap { position: relative; padding-top: clamp(40px, 7vw, 96px); padding-bottom: clamp(32px, 5vw, 64px); }
+.hero .kick { color: var(--text); opacity: .85; }
+.hero .h-mega { color: var(--text); }
+.hero .sub { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 28px; color: var(--text); font-size: 13px; }
+.hero .sub span b { font-weight: 700; }
+.hero .film { margin-top: clamp(28px, 4vw, 52px); background: #000; padding: clamp(10px, 2.2vw, 28px) 0; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.hero .film video, .hero .film img { width: 100%; aspect-ratio: 2.39 / 1; object-fit: cover; }
+.hero .credit { display: flex; justify-content: space-between; gap: 16px; margin-top: 14px; color: var(--text); font-size: 11px; opacity: .8; }
+
+/* section heads */
+.sec { padding: clamp(64px, 9vw, 140px) 0 0; }
+.sec-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 26px; margin-bottom: clamp(28px, 4vw, 48px); }
+.count { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: clamp(56px, 9vw, 140px); line-height: .8; color: transparent; -webkit-text-stroke: 1.5px var(--glow); }
+
+/* brief */
+.brief { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 5vw, 80px); }
+.brief p { margin: 0 0 16px; max-width: 60ch; }
+.brief .tag { font-family: var(--display); font-style: italic; font-weight: 800; font-stretch: 112%; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.1; color: var(--text); margin-bottom: 22px; text-transform: lowercase; }
+.stats { list-style: none; margin: 0; padding: 0; }
+.stat { display: flex; justify-content: space-between; align-items: end; gap: 16px; padding: 14px 0 12px; border-bottom: 1px solid var(--line); position: relative; }
+.sl { color: var(--text); display: flex; flex-direction: column; }
+.sl small { color: var(--muted); font-size: 11px; }
+.sv { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 3vw, 40px); color: var(--text); line-height: 1; white-space: nowrap; }
+
+/* team */
+.team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.tcard { background: var(--ink); border: 1px solid var(--line); border-left: 3px solid var(--rust); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+.tphoto { aspect-ratio: 4/5; overflow: hidden; }
+.tphoto img { width: 100%; height: 100%; object-fit: cover; }
+.tbody { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 4px; margin-top: auto; }
+.handle { font-size: 12px; color: var(--muted); text-decoration: none; margin-top: 8px; }
+.handle:hover { color: var(--glow); }
+.tba { background: transparent; border: 1px dashed #3a3633; border-radius: 4px; padding: 18px; }
+.tba dl, .ccard dl { margin: 14px 0 0; display: grid; gap: 4px 0; font-size: 12px; }
+dt { color: var(--muted); font-size: 10px; text-transform: lowercase; margin-top: 6px; }
+dd { margin: 0; color: var(--body); }
+.note { grid-column: 1 / -1; display: flex; gap: 14px; align-items: center; padding: 16px 18px; background: var(--rust); color: var(--black); border-radius: 4px; font-weight: 700; font-size: 13px; }
+.note::before { content: "●"; font-size: 9px; }
+
+/* aesthetic */
+.aesthetic { columns: 4 220px; column-gap: 12px; }
+.pin { margin: 0 0 12px; break-inside: avoid; overflow: hidden; border-radius: 3px; }
+.pin img { width: 100%; }
+.rules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); margin-top: 36px; }
+.rules div { padding: 18px 18px 18px 0; border-right: 1px solid var(--line); }
+.rules div + div { padding-left: 18px; }
+.rules div:last-child { border-right: 0; }
+.rules b { display: block; font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: 20px; color: var(--text); text-transform: lowercase; line-height: 1; margin-bottom: 8px; }
+
+/* cast */
+.cast { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.ccard .cimg { position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: 3px; margin-bottom: 14px; }
+.ccard .cimg img { width: 100%; height: 100%; object-fit: cover; }
+.palette { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; align-items: center; font-size: 11px; color: var(--muted); }
+.sw { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); }
+
+/* house */
+.house { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.room { margin: 0; }
+.room img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 3px; }
+.room:first-child { grid-column: span 2; grid-row: span 2; }
+.room:first-child img { aspect-ratio: auto; height: calc(100% - 46px); }
+.room figcaption { display: flex; flex-direction: column; padding-top: 8px; font-size: 11px; }
+.room b { color: var(--text); font-weight: 500; }
+.room span { color: var(--muted); }
+
+/* story */
+.story { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px); }
+.beats { list-style: none; margin: 0; padding: 0; counter-reset: b; }
+.beats li { counter-increment: b; display: grid; grid-template-columns: 36px 1fr; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.beats li::before { content: counter(b, decimal-leading-zero); color: var(--glow); font-size: 11px; padding-top: 2px; }
+.beats b { color: var(--text); font-weight: 500; }
+.sindex { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.sidx { text-decoration: none; padding: 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 12px; color: var(--body); display: flex; flex-direction: column; gap: 6px; transition: background .2s; }
+.sidx span { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: 28px; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--muted); transition: -webkit-text-stroke-color .2s, color .2s; }
+.sidx:hover { background: var(--ink); color: var(--text); }
+.sidx:hover span { color: var(--rust); -webkit-text-stroke-color: var(--rust); }
+
+/* divider */
+.divider { margin-top: clamp(80px, 10vw, 160px); background: linear-gradient(160deg, var(--rust), var(--rust-d)); position: relative; overflow: hidden; }
+.divider::before { content: ""; position: absolute; inset: 0; background: url(assets/grain.svg); opacity: .35; mix-blend-mode: multiply; }
+.divider .wrap { position: relative; padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(40px, 6vw, 80px); display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.divider .h-mega { color: var(--text); }
+.divider .kick { color: var(--text); }
+.divider .dnum { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: clamp(64px, 12vw, 200px); line-height: .8; color: transparent; -webkit-text-stroke: 2px var(--text); opacity: .7; }
+
+/* scenes */
+.scene { padding-top: clamp(64px, 8vw, 120px); }
+.scene + .scene .shead { border-top: 1px solid var(--line); padding-top: clamp(28px, 4vw, 48px); }
+.shead { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 20px; }
+.num { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: clamp(72px, 11vw, 176px); line-height: .78; color: transparent; -webkit-text-stroke: 1.5px var(--glow); }
+.meta { display: flex; flex-wrap: wrap; gap: 14px 40px; margin: 24px 0 26px; padding: 14px 0; border-block: 1px solid var(--line); font-size: 12px; }
+.meta div { display: flex; flex-direction: column; gap: 4px; }
+.meta .k { color: var(--muted); font-size: 10px; }
+.meta .v { color: var(--text); }
+.meta .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.boards { display: grid; gap: 14px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.frame { margin: 0; position: relative; }
+.frame img, .frame video { width: 100%; aspect-ratio: 2.36 / 1; object-fit: cover; background: #000; border-radius: 2px; }
+.frame figcaption { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); padding-top: 7px; }
+.frame.noclip .flagnote { aspect-ratio: 2.36 / 1; border: 1px dashed #3a3633; display: flex; flex-direction: column; justify-content: center; padding: 22px; gap: 6px; font-size: 12px; }
+.flagnote b { color: var(--text); font-weight: 700; }
+.copy { display: grid; grid-template-columns: 1.2fr 1.2fr .9fr; gap: clamp(20px, 3vw, 44px); margin-top: 34px; }
+.shots { margin: 0; padding: 0; list-style: none; font-size: 12px; }
+.shots li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+.shots li::before { content: "→ "; color: var(--glow); }
+.stills { margin-top: 40px; }
+.mocks { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.mock { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.mk, .ref { position: relative; overflow: hidden; border-radius: 3px; }
+.mk img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.ref { width: 58%; }
+.ref img { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: saturate(.85); opacity: .9; }
+.extra { margin-top: 22px; }
+.strip { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
+.strip img { height: 180px; width: auto; border-radius: 3px; flex: none; }
+
+.keyshot { display: flex; gap: 16px; align-items: center; background: var(--ink); border: 1px solid var(--line); border-left: 3px solid var(--glow); border-radius: 4px; padding: 14px 18px; margin: 0 0 18px; }
+.keyshot p { margin: 0; color: var(--text); font-size: 13px; }
+.ks-tag { flex: none; background: var(--glow); color: var(--black); font-size: 10px; font-weight: 700; text-transform: lowercase; padding: 3px 10px; border-radius: 99px; }
+.ksvis { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr); gap: 14px; align-items: end; max-width: 980px; margin: 0 0 22px; }
+.ksvis figure { margin: 0; position: relative; overflow: hidden; border-radius: 3px; }
+.ksvis .mk img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.ksvis .ref { width: 100%; }
+.ksvis .ref img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.refnote { font-size: 11px; color: var(--muted); margin: 10px 0 0; display: flex; gap: 8px; align-items: baseline; }
+.refnote::before { content: "ref"; flex: none; border: 1px solid var(--line); border-radius: 99px; padding: 0 7px; font-size: 9px; color: var(--glow); }
+.banner { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; background: var(--ink); border: 1px solid var(--line); border-left: 3px solid var(--glow); border-radius: 4px; padding: 20px 22px; margin-top: 28px; }
+.banner b { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--text); font-size: 22px; line-height: 1; text-transform: lowercase; }
+.banner p { margin: 0; max-width: 70ch; }
+.edit-film { background: #000; border-radius: 3px; overflow: hidden; }
+.edit-film video { width: 100%; aspect-ratio: 16 / 9; }
+.beat { list-style: none; margin: 0; padding: 0; }
+.beat li { display: grid; grid-template-columns: 96px 1fr 1.4fr; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 12px; align-items: baseline; }
+.beat .tc { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--glow); font-size: 18px; white-space: nowrap; }
+.beat .sc { color: var(--text); }
+.beat .mv { color: var(--muted); }
+.musiccard { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; margin: 22px 0 30px; font-size: 12px; }
+.musiccard span b { color: var(--text); font-weight: 500; }
+.mustget { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); margin-top: 18px; }
+.mustget li { list-style: none; padding: 12px 14px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 12px; display: grid; grid-template-columns: 34px 1fr; gap: 8px; }
+.mustget li span { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--glow); font-size: 18px; line-height: 1.1; }
+.mustget li.core span { color: var(--text); }
+@media (max-width: 760px) { .ksvis, .mustget { grid-template-columns: 1fr; } .beat li { grid-template-columns: 70px 1fr; } .beat .mv { grid-column: 2; } .banner { grid-template-columns: 1fr; } }
+
+/* product */
+.product .wrap > .copy { grid-template-columns: 1fr 1fr; }
+.pack { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(20px, 4vw, 60px); align-items: center; margin-top: clamp(48px, 6vw, 90px); }
+.pack img { width: 100%; border-radius: 3px; }
+
+/* props */
+.props { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 60px); }
+.plist { list-style: none; margin: 0; padding: 0; }
+.plist li { display: grid; grid-template-columns: 1fr 1.2fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+.plist.custom li { grid-template-columns: 22px 1fr 1.2fr; }
+.pn { color: var(--text); }
+.pd { color: var(--muted); }
+.flag { width: 20px; height: 20px; border-radius: 50%; background: var(--glow); color: var(--black); font-weight: 700; display: grid; place-items: center; font-size: 12px; animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 6px rgba(224,106,82,.18); } }
+.ptitle { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.ptitle h4 { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--text); font-size: clamp(26px, 3vw, 40px); margin: 0; text-transform: lowercase; line-height: 1; }
+.warn { background: var(--glow); color: var(--black); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; white-space: nowrap; }
+
+/* run of show */
+.run { list-style: none; margin: 0; padding: 0; }
+.run li { display: grid; grid-template-columns: 110px 1fr 1.3fr; gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.run .t { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; font-size: 26px; color: var(--glow); line-height: 1; }
+.run .w { font-family: var(--display); font-weight: 800; font-stretch: 112%; font-size: 17px; color: var(--text); text-transform: lowercase; }
+.run .d { color: var(--muted); font-size: 12px; }
+
+/* location */
+.loc { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px, 4vw, 60px); }
+.loc img { width: 100%; border-radius: 3px; }
+.addr { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--text); font-size: clamp(28px, 3.4vw, 48px); line-height: .95; text-transform: lowercase; margin: 0 0 18px; }
+.kv { display: grid; grid-template-columns: 110px 1fr; gap: 8px 16px; font-size: 12px; margin: 22px 0; }
+.kv span:nth-child(odd) { color: var(--muted); }
+.kv span:nth-child(even) { color: var(--text); }
+.btn { display: inline-flex; gap: 10px; align-items: center; padding: 11px 18px; border-radius: 99px; background: var(--rust); color: var(--text); text-decoration: none; font-size: 12px; font-weight: 700; }
+.btn:hover { background: var(--glow); color: var(--black); }
+
+/* footer */
+.foot { margin-top: clamp(80px, 10vw, 160px); border-top: 1px solid var(--line); }
+.foot .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 26px; padding-bottom: 40px; font-size: 11px; color: var(--muted); }
+.foot img { width: 28px; }
+.foot .big { font-family: var(--display); font-style: italic; font-weight: 900; font-stretch: 125%; color: var(--text); font-size: clamp(56px, 13vw, 210px); line-height: .82; letter-spacing: -.035em; padding: 0 var(--gut); max-width: 1440px; margin: clamp(40px, 6vw, 80px) auto 0; text-transform: lowercase; }
+
+/* lightbox */
+.lb { position: fixed; inset: 0; z-index: 120; background: rgba(5,5,5,.94); display: none; place-items: center; padding: 24px; cursor: zoom-out; }
+.lb.on { display: grid; }
+.lb img { max-height: 92vh; max-width: 96vw; width: auto; object-fit: contain; }
+[data-zoom] { cursor: zoom-in; }
+
+/* motion, all of it optional */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rv { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+    @keyframes rise { from { transform: translateY(46px); opacity: .25; } to { transform: none; opacity: 1; } }
+    .num, .count, .dnum { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    @keyframes drift { from { transform: translateX(-4%); } to { transform: translateX(4%); } }
+    .hero .film { animation: sink linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+    @keyframes sink { to { transform: translateY(-40px) scale(1.02); } }
+    .progress { animation: grow linear both; animation-timeline: scroll(root); }
+    @keyframes grow { to { transform: scaleX(1); } }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker .run, .flag { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .team { grid-template-columns: repeat(2, 1fr); }
+  .cast { grid-template-columns: repeat(3, 1fr); }
+  .house { grid-template-columns: repeat(3, 1fr); }
+  .sindex { grid-template-columns: repeat(4, 1fr); }
+  .copy { grid-template-columns: 1fr 1fr; }
+  .copy > div:last-child { grid-column: 1 / -1; }
+  .rules { grid-template-columns: 1fr 1fr; }
+  .rules div:nth-child(2) { border-right: 0; }
+  .rules div:nth-child(3) { padding-left: 0; }
+}
+@media (max-width: 760px) {
+  body { font-size: 13px; }
+  .nav .links { gap: 14px; }
+  .brief, .story, .props, .loc, .pack, .product .wrap > .copy { grid-template-columns: 1fr; }
+  .pair { grid-template-columns: 1fr; }
+  .copy { grid-template-columns: 1fr; }
+  .cast { grid-template-columns: 1fr 1fr; }
+  .house { grid-template-columns: 1fr 1fr; }
+  .team { grid-template-columns: 1fr; }
+  .sindex { grid-template-columns: repeat(2, 1fr); }
+  .run li { grid-template-columns: 80px 1fr; }
+  .run .d { grid-column: 2; }
+  .run .t { font-size: 20px; }
+  .rules { grid-template-columns: 1fr; }
+  .rules div { border-right: 0; border-bottom: 1px solid var(--line); padding-left: 0 !important; }
+  .mocks { grid-template-columns: 1fr 1fr; }
+  .hero .credit { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="sections">
+  <div class="wrap">
+    <img class="logo" src="assets/k-logo.png" alt="chad lawson photography">
+    <a class="word" href="#top">glaze · christmas morning</a>
+    <div class="links">
+      <a href="#brief">brief</a><a href="#team">team</a><a href="#aesthetic">aesthetic</a><a href="#cast">cast</a>
+      <a href="#house">house</a><a href="#story">story</a><a href="#edit">edit</a>
+      <a href="#scenes">scenes <span class="badge">14</span></a>
+      <a href="#product">product</a><a href="#props">props <span class="badge">10</span></a><a href="#schedule">schedule</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="kick">chad lawson photography · creative deck · film + stills</p>
+    <h1 class="h-mega">christmas<br>morning.</h1>
+    <div class="sub">
+      <span><b>glaze body oil</b> · holiday campaign</span>
+      <span><b>11.24.26</b> · 1 – 6p</span>
+      <span><b>stone mountain, ga</b> · 1966 mid mod</span>
+    </div>
+    <div class="film">
+      <video src="vid/sb14.mp4" poster="img/GLAZE_SB_14.jpg" muted loop playsinline autoplay preload="metadata" data-play></video>
+    </div>
+    <div class="credit"><span>storyboard 14 · the pull back</span><span>all frames are ai storyboards for direction only. real cast, real house, shot on the day.</span></div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div class="run"><span>christmas morning</span><i>●</i><span>glaze body oil</span><i>●</i><span>holiday campaign</span><i>●</i><span>11.24.26</span><i>●</i><span>stone mountain, ga</span><i>●</i><span>1 house</span><i>●</i><span>11 rooms</span><i>●</i><span>14 scenes</span><i>●</i><span>5 people</span><i>●</i><span>1 santa</span><i>●</i><span>absorbs. grip holds. never greasy.</span><i>●</i><span>no smiling</span><i>●</i><span>goes live first week of december</span><i>●</i><span>christmas morning</span><i>●</i><span>glaze body oil</span><i>●</i><span>holiday campaign</span><i>●</i><span>11.24.26</span><i>●</i><span>stone mountain, ga</span><i>●</i><span>1 house</span><i>●</i><span>11 rooms</span><i>●</i><span>14 scenes</span><i>●</i><span>5 people</span><i>●</i><span>1 santa</span><i>●</i><span>absorbs. grip holds. never greasy.</span><i>●</i><span>no smiling</span><i>●</i><span>goes live first week of december</span><i>●</i></div></div>
+
+<main>
+<section class="sec" id="brief">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">01 · project brief</p><h2 class="h-sec">the brief.</h2></div><div class="count" aria-hidden="true">01</div></div>
+    <div class="brief">
+      <div class="rv">
+        <p class="tag">everyone slept over. santa is in every room. nobody asks why.</p>
+        <p>christmas morning in a 1966 mid century house. the girls, him, the founder and an old santa who shows up everywhere, deadpan, and never explains himself. he's the old man from the birthday drop, back for the holidays.</p>
+        <p>no dialogue. nobody smiles at camera. think gucci campaign seriousness and nadia lee cohen. slow-mo, 2.39 widescreen for the film, full vertical for the cutdowns, matte film with grain and dust.</p>
+        <p>the rules on set: a bottle, a box or the logo paper is in every single frame. the oil always reads as <b style="color:var(--text)">absorbs, grip holds, never greasy.</b> the end card is the GLAZE logo and nothing else.</p>
+        <p>i'm shooting stills the whole day between takes. run and gun, continuous light with a softened speedlight pop.</p>
+      </div>
+      <ul class="stats"><li class="stat rv"><span class="sl">full film<small>2.39 letterboxed, every room</small></span><span class="sv">45 – 50s</span></li><li class="stat rv"><span class="sl">hero cut<small>the main ad</small></span><span class="sv">30s</span></li><li class="stat rv"><span class="sl">cutdown<small>bathroom, den, bar, pull back</small></span><span class="sv">15s</span></li><li class="stat rv"><span class="sl">clean ad cut<small>insert removed, safe to run paid</small></span><span class="sv">30s</span></li><li class="stat rv"><span class="sl">social clips<small>one per room, each opens on the strangest santa frame</small></span><span class="sv">9:16</span></li><li class="stat rv"><span class="sl">stills<small>full scene + close heroes, 4:5 and 9:16</small></span><span class="sv">~25</span></li><li class="stat rv"><span class="sl">product heroes<small>bottle, pour, palm, glow</small></span><span class="sv">6+</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="team">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">02 · the team</p><h2 class="h-sec">the team.</h2></div><div class="count" aria-hidden="true">08</div></div>
+    <div class="team">
+      <article class="tcard rv has-ph"><div class="tphoto"><img src="assets/team_chad.jpg" alt="chad lawson" class="" loading="lazy" decoding="async" data-zoom></div><div class="tbody"><p class="kick">photographer + film director</p><h4 class="tname">chad lawson</h4><a class="handle" href="https://www.instagram.com/chadlawsonphotos/">@chadlawsonphotos</a></div></article><article class="tcard rv has-ph"><div class="tphoto"><img src="assets/team_zay.jpg" alt="zay" class="" loading="lazy" decoding="async" data-zoom></div><div class="tbody"><p class="kick">creative + art director</p><h4 class="tname">zay</h4><a class="handle" href="https://www.instagram.com/zaymachai/">@zaymachai</a></div></article><article class="tcard rv has-ph"><div class="tphoto"><img src="assets/team_bacon.jpg" alt="bacon" class="" loading="lazy" decoding="async" data-zoom></div><div class="tbody"><p class="kick">director of photography</p><h4 class="tname">bacon</h4><a class="handle" href="https://www.instagram.com/d_baconboy/">@d_baconboy</a></div></article><article class="tcard rv has-ph"><div class="tphoto"><img src="assets/team_brittni.jpg" alt="brittni" class="" loading="lazy" decoding="async" data-zoom></div><div class="tbody"><p class="kick">owner + talent</p><h4 class="tname">brittni</h4><a class="handle" href="https://www.instagram.com/thebrittni/">@thebrittni</a></div></article>
+      <article class="tba rv"><p class="kick">model · tba</p><h4 class="tname">the lead</h4><dl><dt>build</dt><dd>petite, brown to deep skin, medium bust</dd><dt>hair + makeup</dt><dd>sleek bob or slicked back, skin first makeup, brushed brows, soft brown lip</dd></dl></article><article class="tba rv"><p class="kick">model · tba</p><h4 class="tname">him</h4><dl><dt>build</dt><dd>6&#x27;0 – 6&#x27;2, lean and cut, not bulky, long black hair</dd><dt>hair + makeup</dt><dd>matte face, oiled body, hair down and a little undone</dd></dl></article><article class="tba rv"><p class="kick">model · tba</p><h4 class="tname">the cozy friend</h4><dl><dt>build</dt><dd>medium to large, curvy</dd><dt>hair + makeup</dt><dd>natural curls, bare dewy skin, glossed lip</dd></dl></article><article class="tba rv"><p class="kick">model · tba</p><h4 class="tname">santa</h4><dl><dt>build</dt><dd>older man, real white beard if we can, a stern face that holds deadpan</dd><dt>hair + makeup</dt><dd>beard groomed full, matte skin, nothing jolly</dd></dl></article>
+      <p class="note rv">models are tba. all nationalities and races welcome. the build matters more than anything else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="aesthetic">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">03 · the aesthetic</p><h2 class="h-sec">the aesthetic.</h2></div><div class="count" aria-hidden="true">16</div></div>
+    <p class="lede rv" style="margin:0 0 32px"><b>nadia lee cohen meets 90s gucci.</b> pretty people in a nice house acting like none of this is strange. warm yellow cast, creamy highlights, lifted blacks, grain, dust and the odd scratch. red, white and cream against a lot of wood.</p>
+    <div class="aesthetic"><figure class="pin rv"><img src="img/pin07.jpg" alt="board reference 7" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin10.jpg" alt="board reference 10" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin06.jpg" alt="board reference 6" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin25.jpg" alt="board reference 25" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin26.jpg" alt="board reference 26" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin30.jpg" alt="board reference 30" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin15.jpg" alt="board reference 15" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin28.jpg" alt="board reference 28" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin29.jpg" alt="board reference 29" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin46.jpg" alt="board reference 46" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin50.jpg" alt="board reference 50" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin35.jpg" alt="board reference 35" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin03.jpg" alt="board reference 3" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin21.jpg" alt="board reference 21" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin24.jpg" alt="board reference 24" class="" loading="lazy" decoding="async" data-zoom></figure><figure class="pin rv"><img src="img/pin09.jpg" alt="board reference 9" class="" loading="lazy" decoding="async" data-zoom></figure></div>
+    <p class="refnote">board pulls for mood. we're borrowing the feeling, not copying anybody's shot.</p>
+    <div class="rules rv">
+      <div><b>no smiling</b>serious, aloof, unbothered. no looking at camera unless it's santa.</div>
+      <div><b>product in frame</b>bottle, box or GLAZE paper in every shot. no exceptions.</div>
+      <div><b>grip holds</b>oiled up and nobody slips. the oil absorbs, it never reads greasy.</div>
+      <div><b>red + white</b>minimal tree, red and white ornaments only. the house does the rest.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="cast">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">04 · cast + wardrobe</p><h2 class="h-sec">who's here.</h2></div><div class="count" aria-hidden="true">05</div></div>
+    <div class="cast"><article class="ccard rv">
+  <div class="cimg"><img src="img/cast_1_lead.jpg" alt="the lead stand-in" class="" style="object-position:50% 25%" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">ai stand-in</span></div>
+  <p class="kick">tba</p><h4 class="tname">the lead</h4>
+  <dl><dt>build</dt><dd>petite, brown to deep skin, medium bust</dd><dt>wardrobe</dt><dd>red ribbed crop tank + boy shorts, white crew socks, his candy stripe pajama shirt worn open off the shoulder, towel turban in the bathroom</dd><dt>hair + makeup</dt><dd>sleek bob or slicked back, skin first makeup, brushed brows, soft brown lip</dd></dl>
+</article><article class="ccard rv">
+  <div class="cimg"><img src="img/cast_2_him.jpg" alt="him stand-in" class="" style="object-position:50% 25%" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">ai stand-in</span></div>
+  <p class="kick">tba</p><h4 class="tname">him</h4>
+  <dl><dt>build</dt><dd>6&#x27;0 – 6&#x27;2, lean and cut, not bulky, long black hair</dd><dt>wardrobe</dt><dd>matching candy stripe pajama pants with the custom GLAZE waistband, shirtless, santa hat only for the insert</dd><dt>hair + makeup</dt><dd>matte face, oiled body, hair down and a little undone</dd></dl>
+</article><article class="ccard rv">
+  <div class="cimg"><img src="img/cast_3_glamfriend.jpg" alt="the founder stand-in" class="" style="object-position:50% 25%" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">ai stand-in</span></div>
+  <p class="kick">brittni · @thebrittni</p><h4 class="tname">the founder</h4>
+  <dl><dt>build</dt><dd>confirmed</dd><dt>wardrobe</dt><dd>red satin cami set with cream piping, white faux fur robe, red feather mules, gold hoops</dd><dt>hair + makeup</dt><dd>honey blonde, soft glam, glossy body</dd></dl>
+</article><article class="ccard rv">
+  <div class="cimg"><img src="img/cast_4_cozy.jpg" alt="the cozy friend stand-in" class="" style="object-position:50% 25%" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">ai stand-in</span></div>
+  <p class="kick">tba</p><h4 class="tname">the cozy friend</h4>
+  <dl><dt>build</dt><dd>medium to large, curvy</dd><dt>wardrobe</dt><dd>cream waffle crop set, red knee socks</dd><dt>hair + makeup</dt><dd>natural curls, bare dewy skin, glossed lip</dd></dl>
+</article><article class="ccard rv">
+  <div class="cimg"><img src="img/cast_5_santa.jpg" alt="santa stand-in" class="" style="object-position:50% 25%" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">ai stand-in</span></div>
+  <p class="kick">tba</p><h4 class="tname">santa</h4>
+  <dl><dt>build</dt><dd>older man, real white beard if we can, a stern face that holds deadpan</dd><dt>wardrobe</dt><dd>red velvet smoking jacket with fur trim, black silk pajama pants, velvet loafers, gold chain, tinted gold aviators, hat only at the door</dd><dt>hair + makeup</dt><dd>beard groomed full, matte skin, nothing jolly</dd></dl>
+</article></div>
+    <p class="refnote">ai stand-ins to show build, wardrobe and vibe. the real cast and real pulls are what we shoot.</p>
+    <div class="palette rv">
+      <span class="sw" style="background:#b51d1d"></span><span class="sw" style="background:#f4f0e8"></span><span class="sw" style="background:#e8dcc4"></span><span class="sw" style="background:#7a3e1d"></span><span class="sw" style="background:#c9a24a"></span>
+      <span>red · white · cream · the house's wood · gold accents. client pulls or hires styling.</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="house">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">05 · the house</p><h2 class="h-sec">tiny mighty mid mod.</h2></div><div class="count" aria-hidden="true">11</div></div>
+    <div class="house"><figure class="room rv"><img src="img/living_wide.jpg" alt="living room" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>living room</b><span>twister · insert · pull back</span></figcaption></figure><figure class="room rv"><img src="img/living_sofa.jpg" alt="living room sofa" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>living room sofa</b><span>pull back</span></figcaption></figure><figure class="room rv"><img src="img/entry.jpg" alt="entry" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>entry</b><span>the delivery</span></figcaption></figure><figure class="room rv"><img src="img/hallway.jpg" alt="hallway" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>hallway</b><span>the walk</span></figcaption></figure><figure class="room rv"><img src="img/den.jpg" alt="den" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>den</b><span>gift your man</span></figcaption></figure><figure class="room rv"><img src="img/living_to_den.jpg" alt="living into den" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>living into den</b><span>blocking</span></figcaption></figure><figure class="room rv"><img src="img/fireside.jpg" alt="fireside" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>fireside</b><span>by the fire</span></figcaption></figure><figure class="room rv"><img src="img/bar.jpg" alt="bar" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>bar</b><span>grip holds</span></figcaption></figure><figure class="room rv"><img src="img/dining_kitchen.jpg" alt="dining + kitchen" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>dining + kitchen</b><span>feet up · milk run</span></figcaption></figure><figure class="room rv"><img src="img/bedroom1_mustard.jpg" alt="bedroom 1 · mustard" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>bedroom 1 · mustard</b><span>the wake up</span></figcaption></figure><figure class="room rv"><img src="img/bedroom2_mauve.jpg" alt="bedroom 2 · mauve" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>bedroom 2 · mauve</b><span>gift your girls</span></figcaption></figure><figure class="room rv"><img src="img/cast_7_bathroom.jpg" alt="bathroom (concept)" class="" loading="lazy" decoding="async" data-zoom><figcaption><b>bathroom (concept)</b><span>the bathroom · no listing photos, so this is our best guess</span></figcaption></figure></div>
+  </div>
+</section>
+
+<section class="sec" id="story">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">06 · story overview</p><h2 class="h-sec">the story.</h2></div><div class="count" aria-hidden="true">~48s</div></div>
+    <div class="story">
+      <div class="rv">
+        <p class="body" style="margin-bottom:16px">we start in the bathroom with her and the bottle, and santa walking past the door. then we just move through the house. every room has somebody in it doing their christmas morning, and santa is somewhere he shouldn't be.</p>
+        <p class="body" style="margin-bottom:16px">two gifting beats carry it: gift your man (the den) and gift your girls (bedroom 2). two grip beats prove the oil: the arm wrestle and twister. the calvin klein insert sells the waistband.</p>
+        <p class="body">it all ends in the living room. slow pull back, everyone in their spot, santa center. logo.</p>
+      </div>
+      <ol class="beats rv">
+        <li><span><b>open</b> · the bathroom, the pour, santa passes</span></li>
+        <li><span><b>wake</b> · him, the waistband, a box on the nightstand</span></li>
+        <li><span><b>arrive</b> · santa at the door with the stack</span></li>
+        <li><span><b>gift your man</b> · the den, dry to glazed</span></li>
+        <li><span><b>gift your girls</b> · the mauve room, boxes on santa</span></li>
+        <li><span><b>grip holds</b> · the bar, the founder wins</span></li>
+        <li><span><b>twister</b> · hands planted, santa filming on vhs</span></li>
+        <li><span><b>the insert</b> · stripes, waistband, skin</span></li>
+        <li><span><b>pull back</b> · everyone, santa center, logo</span></li>
+      </ol>
+    </div>
+    <nav class="sindex rv" aria-label="scene index"><a href="#scene-01" class="sidx"><span>01</span>the bathroom</a><a href="#scene-02" class="sidx"><span>02</span>the wake up</a><a href="#scene-03" class="sidx"><span>03</span>the delivery</a><a href="#scene-04" class="sidx"><span>04</span>milk run</a><a href="#scene-05" class="sidx"><span>05</span>the walk</a><a href="#scene-06" class="sidx"><span>06</span>gift your man</a><a href="#scene-07" class="sidx"><span>07</span>by the fire</a><a href="#scene-08" class="sidx"><span>08</span>gift your girls</a><a href="#scene-09" class="sidx"><span>09</span>feet up</a><a href="#scene-10" class="sidx"><span>10</span>grip holds</a><a href="#scene-11" class="sidx"><span>11</span>reading</a><a href="#scene-12" class="sidx"><span>12</span>twister</a><a href="#scene-13" class="sidx"><span>13</span>the insert</a><a href="#scene-14" class="sidx"><span>14</span>the pull back</a></nav>
+  </div>
+</section>
+
+<section class="sec" id="edit">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">07 · the edit</p><h2 class="h-sec">the cut.</h2></div><div class="count" aria-hidden="true">35s</div></div>
+    <div class="edit-film rv"><video src="vid/mock_edit.mp4" poster="img/mock_edit_poster.jpg" muted loop playsinline controls preload="none"></video></div>
+    <div class="banner rv"><b>rough ai edit.</b><p>this is a rough cut stitched from the ai storyboard clips, no audio, purely for the proposal. it shows order and pacing and that's it. the real film will feel more real and more emotional, with better flow and pacing from shot to shot. nothing here is locked. we can move scenes around as we need to.</p></div>
+    <div class="musiccard rv">
+      <span><b>track</b> · fortunate, maxwell (slowed + reverb)</span>
+      <span><b>tempo</b> · about 76 bpm original, roughly 60 slowed, so a beat is about a second</span>
+      <a class="btn" href="https://www.youtube.com/watch?v=ryk9XvU_Jqc">audio reference →</a>
+    </div>
+    <p class="kick">beat map · ~35s hero</p>
+    <ol class="beat"><li><span class="tc">0:00</span><span class="sc">01 the bathroom</span><span class="mv">song opens. her at the mirror, santa crosses the doorway behind her</span></li><li><span class="tc">0:02.5</span><span class="sc">02 the wake up</span><span class="mv">cut on the next beat</span></li><li><span class="tc">0:04</span><span class="sc">03 the delivery</span><span class="mv">santa&#x27;s stare lands on the first downbeat once the vocal comes in</span></li><li><span class="tc">0:06</span><span class="sc">04 + 05 milk run, the walk</span><span class="mv">quick, a beat and a half each</span></li><li><span class="tc">0:09</span><span class="sc">06 gift your man</span><span class="mv">dry forearm on the beat, the glow follows her hand</span></li><li><span class="tc">0:12</span><span class="sc">07 + 08 fire, gift your girls</span><span class="mv">box drop on the downbeat</span></li><li><span class="tc">0:15.75</span><span class="sc">09 + 10 feet up, grip holds</span><span class="mv">the pin hits on the hook</span></li><li><span class="tc">0:20.25</span><span class="sc">11 + 12 reading, twister</span><span class="mv">one flash frame of the legs in the tree right on a beat</span></li><li><span class="tc">0:24.5</span><span class="sc">13 the insert</span><span class="mv">slowest shots in the film, let them breathe</span></li><li><span class="tc">0:28.5</span><span class="sc">14 the pull back</span><span class="mv">rides the last bar</span></li><li><span class="tc">0:32.5</span><span class="sc">GLAZE logo</span><span class="mv">logo on the final downbeat, reverb tail rings out over it</span></li></ol>
+    <p class="refnote">timecodes are approximate. we snap every cut to the downbeats once we have the final slowed version. no lyrics on screen.</p>
+  </div>
+</section>
+
+<div class="divider" id="scenes">
+  <div class="wrap"><div><p class="kick">07 · scene by scene</p><h2 class="h-mega">the scenes.</h2></div><div class="dnum" aria-hidden="true">14</div></div>
+</div>
+
+
+<section class="scene" id="scene-01">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 01 / 14 · bathroom</p>
+        <h3 class="h-scene">the bathroom</h3>
+      </div>
+      <div class="num" aria-hidden="true">01</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">1:20 – 1:50p</span></div>
+      <div><span class="k">in the edit</span><span class="v">5s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>slow-mo hand over the shoulder at the round mirror, bottle in frame</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_01.jpg" alt="storyboard 01" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>01</span></figcaption></figure><figure class="frame"><video src="vid/sb01.mp4" poster="img/GLAZE_SB_01.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>01 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">open on her. towel turban, his stripe shirt hanging off her shoulders, bottle in hand at the round mirror. she works the oil into her shoulder slow. behind her, through the open door, santa walks past with a stack of gifts. she doesn&#x27;t turn around.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">this is the product moment. first thing in the morning, oil on damp skin, the bottle in her hand and on the counter. the macro is the before (ashy knee, dry shoulder) and the after is the glow.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>wide through the doorway, santa passes</li><li>macro pour into her palm</li><li>slow-mo hand over the shoulder</li><li>bottle on the counter insert</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m40.jpg" alt="photo mockup 40" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin40.jpg" alt="pinterest reference 40" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m41.jpg" alt="photo mockup 41" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin41.jpg" alt="pinterest reference 41" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m22.jpg" alt="photo mockup 22" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin22.jpg" alt="pinterest reference 22" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div><div class="extra"><span class="kick">more from the board</span><div class="strip"><img src="img/pin28.jpg" alt="board reference 28" class="" loading="lazy" decoding="async" data-zoom><img src="img/pin29.jpg" alt="board reference 29" class="" loading="lazy" decoding="async" data-zoom></div></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-02">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 02 / 14 · bedroom 1 · mustard</p>
+        <h3 class="h-scene">the wake up</h3>
+      </div>
+      <div class="num" aria-hidden="true">02</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">1:50 – 2:05p</span></div>
+      <div><span class="k">in the edit</span><span class="v">2.5s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the stretch, GLAZE waistband sharp</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_02.jpg" alt="storyboard 02" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>02</span></figcaption></figure><figure class="frame"><video src="vid/sb02.mp4" poster="img/GLAZE_SB_02.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>02 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">him. waking up in the mustard room, arms up, the GLAZE waistband showing. a wrapped GLAZE box is already on the nightstand. nobody knows how it got there.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">introduces the custom waistband and the gift. he stretches dry, before any oil, which sets up the before and after in the den.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>locked off wide, the stretch</li><li>waistband detail</li><li>rack focus to the box on the nightstand</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m38.jpg" alt="photo mockup 38" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin38.jpg" alt="pinterest reference 38" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-03">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 03 / 14 · entry</p>
+        <h3 class="h-scene">the delivery</h3>
+      </div>
+      <div class="num" aria-hidden="true">03</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">2:40 – 3:00p</span></div>
+      <div><span class="k">in the edit</span><span class="v">3s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>santa in the doorway with the box stack, dead into the lens</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_03.jpg" alt="storyboard 03" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>03</span></figcaption></figure><figure class="frame"><video src="vid/sb03.mp4" poster="img/GLAZE_SB_03.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>03 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">santa at the front door in the velvet jacket and gold aviators, a stack of GLAZE boxes up to his beard. he stares straight down the lens. the only frame where he wears the hat.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">the boxes are the packaging reveal. it&#x27;s also the strangest frame in the whole thing, so it opens the vertical cutdowns.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>centered wide, door frame</li><li>slow push into his face</li><li>box stack detail</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m13.jpg" alt="photo mockup 13" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin13.jpg" alt="pinterest reference 13" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m17.jpg" alt="photo mockup 17" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin17.jpg" alt="pinterest reference 17" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m18.jpg" alt="photo mockup 18" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin18.jpg" alt="pinterest reference 18" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-04">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 04 / 14 · kitchen</p>
+        <h3 class="h-scene">milk run</h3>
+      </div>
+      <div class="num" aria-hidden="true">04</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">3:40 – 4:00p</span></div>
+      <div><span class="k">in the edit</span><span class="v">2s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>santa pouring milk, open box of glazed donuts on the counter</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_04.jpg" alt="storyboard 04" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>04</span></figcaption></figure><figure class="frame"><video src="vid/sb04.mp4" poster="img/GLAZE_SB_04.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>04 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">santa pours himself a glass of milk at the open fridge like he lives here. the girls are already in there with an open GLAZE box of glazed donuts. nobody offers him one.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">a nod to the og glaze promo, the bottle sitting next to a glazed donut. day one fans will catch it. it also keeps the box in frame, and it lives as its own social clip.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>wide across the island</li><li>milk pour insert</li><li>glazed donut + bottle, the og promo shot</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m39.jpg" alt="photo mockup 39" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin39.jpg" alt="pinterest reference 39" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-05">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 05 / 14 · hallway mirrors</p>
+        <h3 class="h-scene">the walk</h3>
+      </div>
+      <div class="num" aria-hidden="true">05</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">2:40 – 3:00p</span></div>
+      <div><span class="k">in the edit</span><span class="v">2.5s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the walk past the tall mirror, her reflection with her</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_05.jpg" alt="storyboard 05" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>05</span></figcaption></figure><figure class="frame"><video src="vid/sb05.mp4" poster="img/GLAZE_SB_05.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>05 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">she walks the long wood hallway with a gift in her hands, slow-mo, past the tall framed mirrors. her reflection walks with her.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">full body glow in motion. the mirrors double the skin, so you see the shine from two angles at once.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>dolly back, center hallway</li><li>mirror reflection pass</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m04.jpg" alt="photo mockup 4" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin04.jpg" alt="pinterest reference 4" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m36.jpg" alt="photo mockup 36" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin36.jpg" alt="pinterest reference 36" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-06">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 06 / 14 · den</p>
+        <h3 class="h-scene">gift your man</h3>
+      </div>
+      <div class="num" aria-hidden="true">06</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">2:05 – 2:40p</span></div>
+      <div><span class="k">in the edit</span><span class="v">5s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>macro on his dry forearm, then the glow following her hand</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_06.jpg" alt="storyboard 06" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>06</span></figcaption></figure><figure class="frame"><video src="vid/sb06.mp4" poster="img/GLAZE_SB_06.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>06 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">santa in the chair with his milk. she stands over him while he opens his box on the bench. macro on his dry forearm, then her hand goes over it and the glow follows her hand.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">the real before and after, one pass, no filter. this is the &#x27;gift your man&#x27; beat.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>wide, the three of them</li><li>macro, dry forearm</li><li>her hand, glow follows</li><li>santa sip, deadpan</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m00.jpg" alt="photo mockup 0" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin00.jpg" alt="pinterest reference 0" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m05.jpg" alt="photo mockup 5" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin05.jpg" alt="pinterest reference 5" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m16.jpg" alt="photo mockup 16" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin16.jpg" alt="pinterest reference 16" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m11.jpg" alt="photo mockup 11" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin11.jpg" alt="pinterest reference 11" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div><div class="extra"><span class="kick">more from the board</span><div class="strip"><img src="img/pin10.jpg" alt="board reference 10" class="" loading="lazy" decoding="async" data-zoom></div></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-07">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 07 / 14 · fireside</p>
+        <h3 class="h-scene">by the fire</h3>
+      </div>
+      <div class="num" aria-hidden="true">07</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">4:15 – 4:50p</span></div>
+      <div><span class="k">in the edit</span><span class="v">3s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>her hands on his shoulders, firelight on the oil</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_07.jpg" alt="storyboard 07" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>07</span></figcaption></figure><figure class="frame"><video src="vid/sb07.mp4" poster="img/GLAZE_SB_07.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>07 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">she oils his shoulders on the teal chair in front of the fireplace. low firelight, slow hands, nobody looks at camera.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">putting it on someone is the gift. warm light on oiled skin is the money texture of the whole campaign.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>medium two shot</li><li>hands on shoulders close up</li><li>fire in the foreground, soft</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m33.jpg" alt="photo mockup 33" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin33.jpg" alt="pinterest reference 33" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m32.jpg" alt="photo mockup 32" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin32.jpg" alt="pinterest reference 32" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-08">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 08 / 14 · bedroom 2 · mauve</p>
+        <h3 class="h-scene">gift your girls</h3>
+      </div>
+      <div class="num" aria-hidden="true">08</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">4:00 – 4:15p</span></div>
+      <div><span class="k">in the edit</span><span class="v">3s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the box dropping onto santa between the girls</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_08.jpg" alt="storyboard 08" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>08</span></figcaption></figure><figure class="frame"><video src="vid/sb08.mp4" poster="img/GLAZE_SB_08.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>08 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">brittni and the cozy friend in the mauve room scrolling their phones. santa lies between them, a GLAZE box on his chest. brittni drops another gift on him without looking up.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">the &#x27;gift your girls&#x27; beat, with the founder on screen. the boxes get stacked on santa like he&#x27;s furniture.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>symmetrical wide from the foot of the bed</li><li>box drop, slow-mo</li><li>phones close up</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m01.jpg" alt="photo mockup 1" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin01.jpg" alt="pinterest reference 1" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m48.jpg" alt="photo mockup 48" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin48.jpg" alt="pinterest reference 48" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-09">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 09 / 14 · dining</p>
+        <h3 class="h-scene">feet up</h3>
+      </div>
+      <div class="num" aria-hidden="true">09</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">3:40 – 4:00p</span></div>
+      <div><span class="k">in the edit</span><span class="v">2.5s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>legs up on the table, bottle dead center</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_09.jpg" alt="storyboard 09" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>09</span></figcaption></figure><figure class="frame"><video src="vid/sb09.mp4" poster="img/GLAZE_SB_09.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>09 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">the cozy friend leaned back at the dining table, legs up, red knee socks, opened boxes and tissue around the bottle. she runs her hands down her legs.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">legs are where people notice dry skin first. long glossy line, bottle dead center.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>side wide, legs across frame</li><li>hands down the shin, close</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m49.jpg" alt="photo mockup 49" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin49.jpg" alt="pinterest reference 49" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div><div class="extra"><span class="kick">more from the board</span><div class="strip"><img src="img/pin50.jpg" alt="board reference 50" class="" loading="lazy" decoding="async" data-zoom></div></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-10">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 10 / 14 · bar</p>
+        <h3 class="h-scene">grip holds</h3>
+      </div>
+      <div class="num" aria-hidden="true">10</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">4:15 – 4:50p</span></div>
+      <div><span class="k">in the edit</span><span class="v">4s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the pin. hands locked, macro, slow-mo</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_10.jpg" alt="storyboard 10" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>10</span></figcaption></figure><figure class="frame"><video src="vid/sb10.mp4" poster="img/GLAZE_SB_10.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>10 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">brittni and him arm wrestle across the bar, both oiled. santa referees with his hand on top. slow-mo. her grip holds and she pins him clean.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">the &#x27;not greasy&#x27; proof. it absorbs and your grip still holds. and the founder wins.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>profile two shot, santa center</li><li>hands locked, macro</li><li>the pin, slow-mo</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m14.jpg" alt="photo mockup 14" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin14.jpg" alt="pinterest reference 14" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-11">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 11 / 14 · lounge</p>
+        <h3 class="h-scene">reading</h3>
+      </div>
+      <div class="num" aria-hidden="true">11</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">4:15 – 4:50p</span></div>
+      <div><span class="k">in the edit</span><span class="v">2s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the locked off wide on the sectional</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_11.jpg" alt="storyboard 11" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>11</span></figcaption></figure><figure class="frame"><video src="vid/sb11.mp4" poster="img/GLAZE_SB_11.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>11 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">brittni and the cozy friend on the grey sectional reading old magazines, legs out, bottle on the coffee table. nothing happens. that&#x27;s the point.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">a still life with skin. the bottle sits right between them.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>locked off wide</li><li>page turn insert</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m31.jpg" alt="photo mockup 31" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin31.jpg" alt="pinterest reference 31" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div><div class="extra"><span class="kick">more from the board</span><div class="strip"><img src="img/pin15.jpg" alt="board reference 15" class="" loading="lazy" decoding="async" data-zoom></div></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-12">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 12 / 14 · living room</p>
+        <h3 class="h-scene">twister</h3>
+      </div>
+      <div class="num" aria-hidden="true">12</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">3:00 – 3:40p</span></div>
+      <div><span class="k">in the edit</span><span class="v">4s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>legs out of the tree, overhead flash. plus one low wide of the game</p></div><div class="ksvis"><figure class="mk"><img src="img/m_treelegs.jpg" alt="key shot mockup" class="" width="1100" height="1375" loading="lazy" decoding="async" data-zoom><span class="pill">key shot · mockup</span></figure><figure class="ref"><img src="img/ref_treelegs.jpg" alt="key shot reference" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></figure></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_12.jpg" alt="storyboard 12" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>12</span></figcaption></figure><figure class="frame"><video src="vid/sb12.mp4" poster="img/GLAZE_SB_12.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>12 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">the GLAZE mat. brittni bent over reaching across the dots, the cozy friend down on her hands and knees next to her, wrapping paper flying. the lead stands over them with her arms folded. santa films the whole thing on an old vhs camcorder from the couch.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">the second grip proof. everybody&#x27;s oiled and the hands stay planted. the custom red dot mat is the prop people screenshot. santa&#x27;s camcorder gives us a 4:3 vhs insert for the edit and for social.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>low floor wide, layered</li><li>palms planted, macro</li><li>santa&#x27;s vhs pov (real camcorder)</li><li>paper falling, slow-mo</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m08.jpg" alt="photo mockup 8" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin08.jpg" alt="pinterest reference 8" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m02.jpg" alt="photo mockup 2" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin02.jpg" alt="pinterest reference 2" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m19.jpg" alt="photo mockup 19" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin19.jpg" alt="pinterest reference 19" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m37.jpg" alt="photo mockup 37" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin37.jpg" alt="pinterest reference 37" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div><div class="extra"><span class="kick">more from the board</span><div class="strip"><img src="img/pin06.jpg" alt="board reference 6" class="" loading="lazy" decoding="async" data-zoom><img src="img/pin25.jpg" alt="board reference 25" class="" loading="lazy" decoding="async" data-zoom><img src="img/pin26.jpg" alt="board reference 26" class="" loading="lazy" decoding="async" data-zoom><img src="img/pin30.jpg" alt="board reference 30" class="" loading="lazy" decoding="async" data-zoom></div></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-13">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 13 / 14 · living room + redwood wall</p>
+        <h3 class="h-scene">the insert</h3>
+      </div>
+      <div class="num" aria-hidden="true">13</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">4:50 – 5:20p</span></div>
+      <div><span class="k">in the edit</span><span class="v">3s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">9:16 social</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>13a at the tree. the other setups are bonus</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_13a.jpg" alt="storyboard 13a" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>13a</span></figcaption></figure><figure class="frame"><video src="vid/sb13a.mp4" poster="img/GLAZE_SB_13a.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>13a · 5s loop</span></figcaption></figure></div><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_13b.jpg" alt="storyboard 13b" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>13b</span></figcaption></figure><figure class="frame"><video src="vid/sb13b.mp4" poster="img/GLAZE_SB_13b.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>13b · 5s loop</span></figcaption></figure></div><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_13c.jpg" alt="storyboard 13c" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>13c</span></figcaption></figure><figure class="frame noclip"><div class="flagnote"><b>no motion test</b><span>the generator flagged this one twice. the still stands in, it gets shot for real on the day.</span></div><figcaption><span>motion</span><span>13c · flagged</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">the calvin klein moment. matching stripe pajamas, his shirt slipped off her shoulders, santa hat on him. we shoot it two ways: at the tree (sitting, then lying in the wrapping paper from overhead), then again against the redwood wall. best one goes in the film, the other goes to social.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">the hero shot for the custom GLAZE waistband. the skin carries it. this scene comes out of the clean ad cut.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>13a · at the tree, sitting</li><li>13b · overhead, lying in the paper</li><li>13c · redwood wall, standing</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m35.jpg" alt="photo mockup 35" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin35.jpg" alt="pinterest reference 35" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m03.jpg" alt="photo mockup 3" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin03.jpg" alt="pinterest reference 3" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div></div>
+  </div>
+</section>
+<section class="scene" id="scene-14">
+  <div class="wrap">
+    <header class="shead rv">
+      <div class="shead-l">
+        <p class="kick">scene 14 / 14 · living room</p>
+        <h3 class="h-scene">the pull back</h3>
+      </div>
+      <div class="num" aria-hidden="true">14</div>
+    </header>
+    <div class="meta rv">
+      <div><span class="k">time slot</span><span class="v">3:00 – 3:40p</span></div>
+      <div><span class="k">in the edit</span><span class="v">5s</span></div>
+      <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span></span></div>
+    </div>
+    <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the pull back, santa center, then the logo</p></div>
+    <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_14.jpg" alt="storyboard 14" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>14</span></figcaption></figure><figure class="frame"><video src="vid/sb14.mp4" poster="img/GLAZE_SB_14.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>14 · 5s loop</span></figcaption></figure></div></div>
+    <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
+    <div class="copy rv">
+      <div><p class="kick">what happens</p><p class="body">slow pull back on the whole living room. everyone in their spot. santa center on the sofa, still deadpan. the bottle on the ottoman. cut to the GLAZE logo.</p></div>
+      <div><p class="kick">how it sells glaze</p><p class="body">every room ends up here. the bottle is the last thing you see before the logo card.</p></div>
+      <div><p class="kick">video shots</p><ul class="shots"><li>slow pull back, center</li><li>end card: GLAZE logo only</li></ul></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference · references only, not exact</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m51.jpg" alt="photo mockup 51" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin51.jpg" alt="pinterest reference 51" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m24.jpg" alt="photo mockup 24" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin24.jpg" alt="pinterest reference 24" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m21.jpg" alt="photo mockup 21" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin21.jpg" alt="pinterest reference 21" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m09.jpg" alt="photo mockup 9" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin09.jpg" alt="pinterest reference 9" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div><div class="extra"><span class="kick">more from the board</span><div class="strip"><img src="img/pin07.jpg" alt="board reference 7" class="" loading="lazy" decoding="async" data-zoom></div></div></div>
+  </div>
+</section>
+
+<section class="sec product" id="product">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">09 · product heroes · 5:20 – 5:40p</p><h2 class="h-sec">the bottle.</h2></div><div class="count" aria-hidden="true">P</div></div>
+    <div class="copy rv" style="margin-top:0">
+      <div><p class="kick">what we get</p><p class="body">pickups at the end of the day while the light is still warm. the pour, the palm, the bottle on the bar, the pair on the vanity, the forearm, one glow portrait, and the og callback: the bottle next to a glazed donut.</p></div>
+      <div><p class="kick">why</p><p class="body">these are the ad and product page assets. the bottle label always faces camera and reads correct.</p></div>
+    </div>
+    <div class="stills rv"><p class="kick">stills · mockup over its board reference</p><div class="mocks"><figure class="mock"><div class="mk"><img src="img/m42.jpg" alt="photo mockup 42" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin42.jpg" alt="pinterest reference 42" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m45.jpg" alt="photo mockup 45" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin45.jpg" alt="pinterest reference 45" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m43.jpg" alt="photo mockup 43" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin43.jpg" alt="pinterest reference 43" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m44.jpg" alt="photo mockup 44" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin44.jpg" alt="pinterest reference 44" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m23.jpg" alt="photo mockup 23" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin23.jpg" alt="pinterest reference 23" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure><figure class="mock"><div class="mk"><img src="img/m47.jpg" alt="photo mockup 47" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">mockup</span></div><div class="ref"><img src="img/pin47.jpg" alt="pinterest reference 47" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></div></figure></div><div class="extra"><span class="kick">more from the board</span><div class="strip"><img src="img/pin46.jpg" alt="board reference 46" class="" loading="lazy" decoding="async" data-zoom></div></div></div>
+    <div class="pack">
+      <div class="rv"><img src="img/cast_6_packaging.jpg" alt="GLAZE packaging concept" class="" width="1100" height="1365" loading="lazy" decoding="async" data-zoom></div>
+      <div class="rv">
+        <p class="kick">packaging</p>
+        <h3 class="h-scene" style="font-size:clamp(36px,5vw,72px)">wrap it all.</h3>
+        <p class="lede">GLAZE logo paper in two colorways (red on white, white on red), red rigid boxes with lids, white satin ribbon, printed tissue inside, and a "from: santa" tag on every one. this is the gift look for the whole drop, so it should be easy for customers to recreate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="props">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">10 · master prop list</p><h2 class="h-sec">props.</h2></div><div class="count" aria-hidden="true">29</div></div>
+    <div class="props">
+      <div class="rv">
+        <div class="ptitle"><h4>custom</h4><span class="warn">! order asap</span></div>
+        <ul class="plist custom"><li><span class="flag" title="order asap">!</span><span class="pn">GLAZE wrapping paper</span><span class="pd">logo print in two colorways: red on white and white on red. a lot of it, it gets torn every take</span></li><li><span class="flag" title="order asap">!</span><span class="pn">printed GLAZE tissue</span><span class="pd">for inside the boxes</span></li><li><span class="flag" title="order asap">!</span><span class="pn">red rigid GLAZE gift boxes</span><span class="pd">lid style, a few sizes for the santa stack</span></li><li><span class="flag" title="order asap">!</span><span class="pn">GLAZE waistband pajama pants / boxers</span><span class="pd">custom waistband, candy stripe to match</span></li><li><span class="flag" title="order asap">!</span><span class="pn">red dot GLAZE twister mat</span><span class="pd">white mat, red dots only, GLAZE logo on the edge</span></li><li><span class="flag" title="order asap">!</span><span class="pn">GLAZE canvas sack</span><span class="pd">for santa</span></li><li><span class="flag" title="order asap">!</span><span class="pn">GLAZE donut box</span><span class="pd">red, open lid, holds a dozen glazed for the kitchen</span></li><li><span class="flag" title="order asap">!</span><span class="pn">&#x27;from: santa&#x27; gift tags</span><span class="pd">printed or hand stamped</span></li><li><span class="flag" title="order asap">!</span><span class="pn">santa&#x27;s handwritten GLAZE list</span><span class="pd">paper prop for the den</span></li><li><span class="flag" title="order asap">!</span><span class="pn">&#x27;merry xmas&#x27; sign</span><span class="pd">hand lettered card for the finale</span></li></ul>
+      </div>
+      <div class="rv">
+        <div class="ptitle"><h4>store bought</h4></div>
+        <ul class="plist"><li><span class="pn">minimal tree</span><span class="pd">client providing. red + white ornaments only</span></li><li><span class="pn">red + white ornaments</span><span class="pd">glass, matte and gloss mix</span></li><li><span class="pn">white satin ribbon</span><span class="pd">wide, for every box</span></li><li><span class="pn">vintage vhs camcorder</span><span class="pd">for santa. a working one so we can use the footage</span></li><li><span class="pn">twister spinner</span><span class="pd">from a regular twister set</span></li><li><span class="pn">milk + clear glasses</span><span class="pd">kitchen + den</span></li><li><span class="pn">glazed donuts</span><span class="pd">two dozen original glazed, fresh that morning. kitchen + the og promo callback</span></li><li><span class="pn">old magazines</span><span class="pd">70s and 80s, lounge</span></li><li><span class="pn">phones</span><span class="pd">talent&#x27;s own is fine, cases off</span></li><li><span class="pn">white bath towels</span><span class="pd">turban + bathroom dressing</span></li><li><span class="pn">red roses</span><span class="pd">small bud vase on the vanity</span></li><li><span class="pn">wreath with red bow</span><span class="pd">front door</span></li><li><span class="pn">bar dressing</span><span class="pd">whiskey bottles, rocks glasses</span></li><li><span class="pn">red feather mules</span><span class="pd">wardrobe pull</span></li><li><span class="pn">white crew socks + red knee socks</span><span class="pd">wardrobe pull, a few pairs</span></li><li><span class="pn">gold hoops, gold chain, tinted aviators</span><span class="pd">wardrobe pull</span></li><li><span class="pn">santa hats x2</span><span class="pd">door + insert</span></li><li><span class="pn">glycerin spray bottle</span><span class="pd">touch ups between takes</span></li><li><span class="pn">tape, scissors, extra paper</span><span class="pd">rewrap between takes</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="schedule">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">11 · run of show · 11.24.26</p><h2 class="h-sec">the day.</h2></div><div class="count" aria-hidden="true">1–6</div></div>
+    <ol class="run"><li class="rv"><span class="t">1:00p</span><span class="w">load in + setup</span><span class="d">crew call. talent in hair + makeup</span></li><li class="rv"><span class="t">1:20p</span><span class="w">the bathroom</span><span class="d">scene 01 · film + stills · product macros</span></li><li class="rv"><span class="t">1:50p</span><span class="w">bedroom 1</span><span class="d">scene 02</span></li><li class="rv"><span class="t">2:05p</span><span class="w">den</span><span class="d">scene 06 · before and after</span></li><li class="rv"><span class="t">2:40p</span><span class="w">entry + hallway</span><span class="d">scenes 03 + 05</span></li><li class="rv"><span class="t">3:00p</span><span class="w">living room</span><span class="d">scenes 12 + 14 · twister + the pull back</span></li><li class="rv"><span class="t">3:40p</span><span class="w">dining + kitchen</span><span class="d">scenes 09 + 04</span></li><li class="rv"><span class="t">4:00p</span><span class="w">bedroom 2</span><span class="d">scene 08</span></li><li class="rv"><span class="t">4:15p</span><span class="w">bar · lounge · fireside</span><span class="d">scenes 10, 11 + 07</span></li><li class="rv"><span class="t">4:50p</span><span class="w">the insert</span><span class="d">scene 13 · tree sitting, tree lying, redwood wall</span></li><li class="rv"><span class="t">5:20p</span><span class="w">product pickups</span><span class="d">heroes while the light is warm · sunset around 5:30</span></li><li class="rv"><span class="t">5:40p</span><span class="w">breakdown</span><span class="d">reset the house, out by 6:00p</span></li></ol>
+    <div class="banner rv"><b>must-gets.</b><p>if we fall behind, we cut extras, not these. white numbers are the core scenes.</p></div>
+    <ul class="mustget rv"><li class="core"><span>01</span>slow-mo hand over the shoulder at the round mirror, bottle in frame</li><li class=""><span>02</span>the stretch, GLAZE waistband sharp</li><li class="core"><span>03</span>santa in the doorway with the box stack, dead into the lens</li><li class=""><span>04</span>santa pouring milk, open box of glazed donuts on the counter</li><li class=""><span>05</span>the walk past the tall mirror, her reflection with her</li><li class="core"><span>06</span>macro on his dry forearm, then the glow following her hand</li><li class=""><span>07</span>her hands on his shoulders, firelight on the oil</li><li class=""><span>08</span>the box dropping onto santa between the girls</li><li class=""><span>09</span>legs up on the table, bottle dead center</li><li class="core"><span>10</span>the pin. hands locked, macro, slow-mo</li><li class=""><span>11</span>the locked off wide on the sectional</li><li class="core"><span>12</span>legs out of the tree, overhead flash. plus one low wide of the game</li><li class="core"><span>13</span>13a at the tree. the other setups are bonus</li><li class="core"><span>14</span>the pull back, santa center, then the logo</li><li class="core"><span>P</span>the pour on the shoulder + the bottle next to a glazed donut</li></ul>
+  </div>
+</section>
+
+<section class="sec" id="location">
+  <div class="wrap">
+    <div class="sec-head rv"><div><p class="kick">12 · location + what to bring</p><h2 class="h-sec">get there.</h2></div><div class="count" aria-hidden="true">GA</div></div>
+    <div class="loc">
+      <div class="rv"><img src="img/living_wide.jpg" alt="tiny mighty mid mod, living room" class="" loading="lazy" decoding="async" data-zoom></div>
+      <div class="rv">
+        <p class="addr">tiny mighty mid mod<br>stone mountain, ga</p>
+        <div class="kv">
+          <span>date</span><span>monday 11.24.26</span>
+          <span>call</span><span>1:00p · load in + setup</span>
+          <span>wrap</span><span>6:00p · house reset</span>
+          <span>light</span><span>daylight, sunset around 5:30</span>
+          <span>address</span><span>on the peerspace booking</span>
+        </div>
+        <a class="btn" href="https://peerspace.app.link/eBP6p8sc17b">view the listing →</a>
+        <ul class="plist" style="margin-top:34px"><li><span class="pn">clean skin</span><span class="pd">no lotion or oil the day of. we want the oil to read on camera</span></li><li><span class="pn">nails</span><span class="pd">clean, neutral or red</span></li><li><span class="pn">nude undergarments</span><span class="pd">skin tone, seamless</span></li><li><span class="pn">slides + a robe</span><span class="pd">for between setups</span></li><li><span class="pn">hair</span><span class="pd">as discussed with zay. come camera ready unless h+mu says otherwise</span></li><li><span class="pn">crew</span><span class="pd">own kit. we&#x27;re running continuous + a softened speedlight pop</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="big">see you on the 24th.</p>
+  <div class="foot"><div class="wrap"><span>GLAZE CHRISTMAS MORNING · CREATIVE DECK</span><img src="assets/k-logo.png" alt="chad lawson photography"></div></div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="image preview"><img alt=""></div>
+
+<script>
+(() => {
+  // play clips only while on screen
+  const vids = [...document.querySelectorAll('video[data-play]')];
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    const v = en.target;
+    if (en.isIntersecting) { v.preload = 'auto'; const p = v.play(); if (p) p.catch(() => {}); }
+    else v.pause();
+  }), { threshold: .25 });
+  vids.forEach(v => io.observe(v));
+
+  // lightbox
+  const lb = document.getElementById('lb'), li = lb.querySelector('img');
+  document.addEventListener('click', ev => {
+    const t = ev.target.closest('[data-zoom]');
+    if (t) { li.src = t.currentSrc || t.src; li.alt = t.alt; lb.classList.add('on'); return; }
+    if (ev.target.closest('#lb')) lb.classList.remove('on');
+  });
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape') lb.classList.remove('on'); });
+
+})();
+</script>
+</body>
+</html>
