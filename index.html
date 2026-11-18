@@ -199,6 +199,11 @@ dd { margin: 0; color: var(--body); }
 .strip { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
 .strip img { height: 180px; width: auto; border-radius: 3px; flex: none; }
 
+.talent { border: 1px solid var(--line); border-left: 3px solid #b3381f; background: rgba(179,56,31,.08); border-radius: 4px; padding: 14px 18px; margin: 0 0 18px; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; }
+.talent .tl p { margin: 8px 0 0; color: var(--text); font-size: 13px; }
+.tl-tag { display: inline-block; background: #b3381f; color: #fff; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+.tl-refs { display: flex; gap: 8px; }
+.tl-refs img { width: 170px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; }
 .keyshot { display: flex; gap: 16px; align-items: center; background: var(--ink); border: 1px solid var(--line); border-left: 3px solid var(--glow); border-radius: 4px; padding: 14px 18px; margin: 0 0 18px; }
 .keyshot p { margin: 0; color: var(--text); font-size: 13px; }
 .ks-tag { flex: none; background: var(--glow); color: var(--black); font-size: 10px; font-weight: 700; text-transform: lowercase; padding: 3px 10px; border-radius: 99px; }
@@ -363,6 +368,7 @@ html, body { overflow-x: clip; }
   .h-scene { font-size: 40px; }
   .h-sec { font-size: 46px; }
   .meta { gap: 10px 22px; }
+  .talent { grid-template-columns: 1fr; } .tl-refs img { width: calc(50% - 4px); }
   .keyshot, .macro { flex-direction: column; align-items: flex-start; gap: 8px; }
   .postcards { grid-template-columns: 1fr 1fr; gap: 12px; }
   .hand { font-size: 19px; }
@@ -466,7 +472,7 @@ html, body { overflow-x: clip; }
 </article><article class="ccard rv">
   <div class="cimg"><img src="img/cast_3_glamfriend.jpg" alt="the founder stand-in" class="" style="object-position:50% 25%" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">ai stand-in</span></div>
   <p class="kick">brittni · @thebrittni</p><h4 class="tname">the founder</h4>
-  <dl><dt>build</dt><dd>confirmed</dd><dt>wardrobe</dt><dd>red satin cami set with cream piping, white faux fur robe, red feather mules, gold hoops</dd><dt>hair + makeup</dt><dd>honey blonde, soft glam, glossy body</dd></dl>
+  <dl><dt>build</dt><dd>confirmed. her shots: 03 · 05 · 08 · 10 · 11 · 14, look for the brittni tag in each scene</dd><dt>wardrobe</dt><dd>red satin cami set with cream piping, white faux fur robe, red feather mules, gold hoops</dd><dt>hair + makeup</dt><dd>honey blonde, soft glam, glossy body</dd></dl>
 </article><article class="ccard rv">
   <div class="cimg"><img src="img/cast_4_cozy.jpg" alt="the cozy friend stand-in" class="" style="object-position:50% 25%" width="1100" height="1365" loading="lazy" decoding="async" data-zoom><span class="pill">ai stand-in</span></div>
   <p class="kick">tba</p><h4 class="tname">the cozy friend</h4>
@@ -563,6 +569,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>her leg up on the pink tub, hand pressing the scrub down her shin, grains catching the light</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_00.jpg" alt="storyboard 00" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>00</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -589,6 +596,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>slow-mo hand over the shoulder at the round mirror, bottle in frame</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_01.jpg" alt="storyboard 01" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>01</span></figcaption></figure><figure class="frame"><video src="vid/sb01.mp4" poster="img/GLAZE_SB_01.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>01 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -615,6 +623,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the stretch, GLAZE waistband sharp</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_02.jpg" alt="storyboard 02" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>02</span></figcaption></figure><figure class="frame"><video src="vid/sb02.mp4" poster="img/GLAZE_SB_02.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>02 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -641,6 +650,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the two of them asleep, the middle of the bed empty</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_02b.jpg" alt="storyboard 02b" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>02b</span></figcaption></figure><figure class="frame"><video src="vid/sb02b.mp4" poster="img/GLAZE_SB_02b.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>02b · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -667,6 +677,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>santa in the doorway with the box stack, dead into the lens</p></div>
+    <div class="talent rv"><div class="tl"><span class="tl-tag">brittni&#39;s shot</span><p>right after santa&#x27;s take at the door: brittni hugging the red GLAZE box stack he left, white feather jacket over her set, red tights, eyes half shut like it&#x27;s all hers. same lights, one setup.</p></div><div class="tl-refs"><img src="img/b_redboxes.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom></div></div>
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_03.jpg" alt="storyboard 03" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>03</span></figcaption></figure><figure class="frame"><video src="vid/sb03.mp4" poster="img/GLAZE_SB_03.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>03 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -693,6 +704,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>santa pouring milk, open box of glazed donuts on the counter</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_04.jpg" alt="storyboard 04" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>04</span></figcaption></figure><figure class="frame"><video src="vid/sb04.mp4" poster="img/GLAZE_SB_04.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>04 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -719,6 +731,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the walk past the tall mirror, her reflection with her</p></div>
+    <div class="talent rv"><div class="tl"><span class="tl-tag">brittni&#39;s shot</span><p>she passes the other way down the wood hallway with her own box stack up to her sunglasses, red knit set. doesn&#x27;t break stride. grab it right after the lead&#x27;s walk.</p></div><div class="tl-refs"><img src="img/b_stack1.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom><img src="img/b_knit.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom></div></div>
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_05.jpg" alt="storyboard 05" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>05</span></figcaption></figure><figure class="frame"><video src="vid/sb05.mp4" poster="img/GLAZE_SB_05.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>05 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -745,6 +758,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>macro on his dry forearm, then the glow following her hand</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_06.jpg" alt="storyboard 06" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>06</span></figcaption></figure><figure class="frame"><video src="vid/sb06.mp4" poster="img/GLAZE_SB_06.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>06 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -771,6 +785,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>her hands on his shoulders, firelight on the oil</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_07.jpg" alt="storyboard 07" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>07</span></figcaption></figure><figure class="frame"><video src="vid/sb07.mp4" poster="img/GLAZE_SB_07.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>07 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -797,6 +812,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the box dropping onto santa between the girls</p></div>
+    <div class="talent rv"><div class="tl"><span class="tl-tag">brittni&#39;s shot</span><p>alt frame in the same bed: brittni asleep with her head on santa&#x27;s shoulder, glasses on, santa sitting up with his arms folded, eyes closed. shoot it right after the box drop.</p></div><div class="tl-refs"><img src="img/b_santa.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom></div></div>
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_08.jpg" alt="storyboard 08" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>08</span></figcaption></figure><figure class="frame"><video src="vid/sb08.mp4" poster="img/GLAZE_SB_08.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>08 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -823,6 +839,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>legs up on the table, bottle dead center</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_09.jpg" alt="storyboard 09" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>09</span></figcaption></figure><figure class="frame"><video src="vid/sb09.mp4" poster="img/GLAZE_SB_09.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>09 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -849,6 +866,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the pin. hands locked, macro, slow-mo</p></div>
+    <div class="talent rv"><div class="tl"><span class="tl-tag">brittni&#39;s shot</span><p>after the pin she turns to camera at the bar. white fur trim robe open over the red satin set, a flute in one hand, the GLAZE bottle in the other, red lip, dead stare. her hero still.</p></div><div class="tl-refs"><img src="img/b_robe.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom></div></div>
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_10.jpg" alt="storyboard 10" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>10</span></figcaption></figure><figure class="frame"><video src="vid/sb10.mp4" poster="img/GLAZE_SB_10.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>10 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -875,6 +893,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">clean ad</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the locked off wide on the sectional</p></div>
+    <div class="talent rv"><div class="tl"><span class="tl-tag">brittni&#39;s shot</span><p>brittni stretched out long on the sectional, head propped on her hand, red set and slippers, looking straight down the lens while the cozy friend keeps reading.</p></div><div class="tl-refs"><img src="img/b_sofa.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom></div></div>
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_11.jpg" alt="storyboard 11" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>11</span></figcaption></figure><figure class="frame"><video src="vid/sb11.mp4" poster="img/GLAZE_SB_11.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>11 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -901,6 +920,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">clean ad</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>legs out of the tree, overhead flash. plus one low wide of the game</p></div><div class="ksvis"><figure class="mk"><img src="img/m_treelegs.jpg" alt="key shot mockup" class="" width="1100" height="1375" loading="lazy" decoding="async" data-zoom><span class="pill">key shot · mockup</span></figure><figure class="ref"><img src="img/ref_treelegs.jpg" alt="key shot reference" class="" loading="lazy" decoding="async" data-zoom><span class="pill dim">ref</span></figure></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_12.jpg" alt="storyboard 12" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>12</span></figcaption></figure><figure class="frame"><video src="vid/sb12.mp4" poster="img/GLAZE_SB_12.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>12 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -927,6 +947,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">postcard</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>13a at the tree. the other setups are bonus</p></div>
+    
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_13a.jpg" alt="storyboard 13a" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>13a</span></figcaption></figure><figure class="frame"><video src="vid/sb13a.mp4" poster="img/GLAZE_SB_13a.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>13a · 5s loop</span></figcaption></figure></div><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_13b.jpg" alt="storyboard 13b" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>13b</span></figcaption></figure><figure class="frame"><video src="vid/sb13b.mp4" poster="img/GLAZE_SB_13b.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>13b · 5s loop</span></figcaption></figure></div><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_13c.jpg" alt="storyboard 13c" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>13c</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
@@ -953,6 +974,7 @@ html, body { overflow-x: clip; }
       <div class="cuts"><span class="k">lives in</span><span class="chips"><span class="chip">full film</span><span class="chip">30s</span><span class="chip">15s</span><span class="chip">clean ad</span></span></div>
     </div>
     <div class="keyshot rv"><span class="ks-tag">key shot</span><p>the pull back, santa center, then the logo</p></div>
+    <div class="talent rv"><div class="tl"><span class="tl-tag">brittni&#39;s shot</span><p>her spot in the pull back: kneeling at the tree with a red GLAZE box. for social, one more frame of her by the tree wrapped in clear cellophane with a red bow. she&#x27;s the gift.</p></div><div class="tl-refs"><img src="img/b_tree.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom><img src="img/b_cello.jpg" alt="brittni reference" class="" loading="lazy" decoding="async" data-zoom></div></div>
     <div class="boards rv"><div class="pair"><figure class="frame"><img src="img/GLAZE_SB_14.jpg" alt="storyboard 14" class="" width="1600" height="679" loading="lazy" decoding="async" data-zoom><figcaption><span>storyboard</span><span>14</span></figcaption></figure><figure class="frame"><video src="vid/sb14.mp4" poster="img/GLAZE_SB_14.jpg" muted loop playsinline preload="none" data-play></video><figcaption><span>motion</span><span>14 · 5s loop</span></figcaption></figure></div></div>
     <p class="refnote">storyboards + clips are ai references for mood, blocking and framing. we're not expected to match them exactly.</p>
     <div class="copy rv">
