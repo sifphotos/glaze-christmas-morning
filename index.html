@@ -380,6 +380,20 @@ dd { margin: 0; color: var(--body); }
 /* mobile polish */
 html, body { overflow-x: clip; }
 @media (max-width: 760px) {
+  /* tighter image grids on phones, tap any image to open it full size */
+  .aesthetic { columns: 3; column-gap: 6px; }
+  .aesthetic .pin { margin-bottom: 6px; }
+  .refgrid, .tg { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .tg.first { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .tf .pill { font-size: 8px; padding: 2px 6px; }
+  .mocks { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .blist { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .blist p { font-size: 11px; }
+  .house { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .room figcaption { font-size: 10px; padding-top: 4px; }
+  .room figcaption span { display: none; }
+}
+@media (max-width: 760px) {
   .nav .word { display: none; }
   .nav .wrap { gap: 14px; }
   .nav .links { margin-left: 0; flex: 1; }
